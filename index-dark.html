@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nüde — Real People, Honest Food, All Nüde | Bali</title>
+  <meta name="description" content="Nüde is Bali's original neighbourhood café. Real people, honest food, and good coffee across four locations: Berawa, Umalas, Babakan, and Pererenan.">
+  <meta property="og:title" content="Nüde Café Bali — Real People, Honest Food">
+  <meta property="og:description" content="Born in Bali, 2016. Four locations across the island. All-day brunch, Bali's best burgers, honest bowls, and good coffee.">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Nüde Café",
+    "description": "Real People, Honest Food, All Nüde. Bali's original neighbourhood café, est. 2016.",
+    "url": "https://nude-bali.com",
+    "servesCuisine": ["All-day Brunch", "Burgers", "Bowls"],
+    "openingHours": "Mo-Su 07:00-22:00",
+    "sameAs": ["https://www.instagram.com/nudebali"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       RESET + ROOT — DARK PALETTE
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #16100d;
+      --bg2:          #1e1511;
+      --bg3:          #261a14;
+      --bg4:          #2e211a;
+      --text:         #f0ead8;
+      --text-dim:     #9a8a7e;
+      --text-muted:   #5e5048;
+      --accent:       #d4865e;
+      --accent-h:     #c07248;
+      --accent2:      #7ab87d;
+      --border:       rgba(240,234,216,0.07);
+      --border-s:     rgba(240,234,216,0.14);
+      --f-display:    'Playfair Display', Georgia, serif;
+      --f-italic:     'Cormorant Garamond', Georgia, serif;
+      --f-body:       'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: auto; }
+
+    body {
+      font-family: var(--f-body);
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+    button { font-family: var(--f-body); cursor: pointer; border: none; background: none; }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ============================================
+       GRAIN
+    ============================================ */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.055;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    /* ============================================
+       CURSOR
+    ============================================ */
+    .cursor {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10000;
+      transform: translate(-50%, -50%);
+      will-change: transform;
+    }
+
+    @media (pointer: coarse) { .cursor { display: none; } }
+
+    /* ============================================
+       LOADER
+    ============================================ */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+
+    .loader-brand {
+      font-family: var(--f-display);
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      display: flex;
+      gap: 0.02em;
+      line-height: 1;
+    }
+
+    .loader-letter { display: inline-block; will-change: transform, opacity; }
+
+    .loader-bar {
+      width: 48px;
+      height: 1.5px;
+      background: var(--border-s);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loader-bar-fill {
+      position: absolute;
+      inset: 0;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      will-change: transform;
+    }
+
+    .loader-sub {
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--text-muted);
+      opacity: 0;
+    }
+
+    /* ============================================
+       NAV
+    ============================================ */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.6rem 0;
+      transition: padding 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    #nav.scrolled {
+      padding: 1rem 0;
+      background: rgba(22,16,13,0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-color: var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--f-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-dim);
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 0;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-cta {
+      padding: 0.6rem 1.6rem;
+      border: 1px solid var(--border-s);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text);
+      transition: all 0.22s ease;
+      display: inline-block;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5.5px;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 200;
+      position: relative;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--text);
+      transition: all 0.32s ease;
+      transform-origin: center;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(22,16,13,0.98);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 150;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.32s ease;
+    }
+
+    .nav-overlay.open { opacity: 1; pointer-events: all; }
+
+    .overlay-link {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      padding: 0.6rem 1.5rem;
+      transition: color 0.2s;
+      text-align: center;
+    }
+
+    .overlay-link:hover { color: var(--accent); }
+
+    .overlay-cta {
+      margin-top: 1.5rem;
+      padding: 0.85rem 2.5rem;
+      border: 1px solid var(--border-s);
+      font-family: var(--f-body);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text);
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    .overlay-cta:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .overlay-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--border-s);
+      margin: 1rem 0;
+    }
+
+    /* ============================================
+       HERO
+    ============================================ */
+    #hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 6rem;
+      padding-top: 7rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      /* REPLACE: full-bleed hero image — dark moody Bali café interior or food */
+      background:
+        radial-gradient(ellipse 90% 70% at 85% 15%, rgba(212,134,94,0.16) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 80% at 5% 85%, rgba(122,184,125,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 120% 50% at 50% 110%, rgba(30,21,17,0.8) 0%, transparent 45%),
+        var(--bg);
+    }
+
+    .hero-ring {
+      position: absolute;
+      width: 65vw;
+      height: 65vw;
+      max-width: 760px;
+      max-height: 760px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,134,94,0.12);
+      top: 50%;
+      right: -8%;
+      transform: translateY(-48%);
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    .hero-ring::before {
+      content: '';
+      position: absolute;
+      inset: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,134,94,0.06);
+    }
+
+    .hero-ring::after {
+      content: '';
+      position: absolute;
+      inset: 90px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,134,94,0.03);
+    }
+
+    .hero-watermark {
+      position: absolute;
+      right: 4%;
+      bottom: 10%;
+      font-family: var(--f-display);
+      font-size: 28vw;
+      font-weight: 900;
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(212,134,94,0.06);
+      pointer-events: none;
+      user-select: none;
+      line-height: 0.85;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      will-change: opacity, transform;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .hero-title-wrap { overflow: hidden; margin-bottom: 2rem; }
+
+    .hero-title {
+      font-family: var(--f-display);
+      font-size: clamp(4.5rem, 11vw, 10.5rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 0.9;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      display: block;
+      will-change: clip-path;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-dim);
+      line-height: 1.8;
+      max-width: 440px;
+      margin-bottom: 2.75rem;
+      will-change: opacity, transform;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--f-body);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      transition: all 0.22s ease;
+      cursor: pointer;
+      will-change: opacity, transform;
+    }
+
+    .btn-primary {
+      padding: 1rem 2.75rem;
+      background: var(--accent);
+      color: #fff;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-h);
+      border-color: var(--accent-h);
+    }
+
+    .btn-ghost {
+      padding: 1rem 2.75rem;
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border-s);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      z-index: 2;
+    }
+
+    .hero-scroll-label {
+      font-size: 0.58rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-muted);
+      writing-mode: vertical-rl;
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 56px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50%       { opacity: 0.9; transform: scaleY(1.08); }
+    }
+
+    /* ============================================
+       SECTION SHARED
+    ============================================ */
+    .section-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.12;
+      letter-spacing: -0.015em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ============================================
+       MARQUEE
+    ============================================ */
+    #marquee {
+      padding: 1.15rem 0;
+      background: rgba(240,234,216,0.04);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      animation: marqueeRoll 30s linear infinite;
+      will-change: transform;
+    }
+
+    .marquee-group {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 2rem;
+      padding-right: 2rem;
+    }
+
+    .marquee-text {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-muted);
+    }
+
+    .marquee-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    @keyframes marqueeRoll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ============================================
+       STORY
+    ============================================ */
+    #story {
+      padding: 8rem 0;
+      background: var(--bg2);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .story-image-wrap {
+      position: relative;
+      will-change: transform, opacity;
+    }
+
+    .story-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      /* REPLACE: warm food close-up or café portrait — dark moody variant */
+      background: linear-gradient(150deg,
+        #3a2a1e 0%,
+        #4a3424 25%,
+        #5a4030 50%,
+        #6a4c3a 70%,
+        #7a5848 100%);
+    }
+
+    .story-badge {
+      position: absolute;
+      bottom: -1.75rem;
+      right: -1.75rem;
+      width: 96px;
+      height: 96px;
+      background: var(--accent);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+    }
+
+    .badge-year {
+      font-family: var(--f-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .badge-est {
+      font-size: 0.52rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .story-text { will-change: opacity, transform; }
+
+    .story-body {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--text-dim);
+      margin-bottom: 1.4rem;
+    }
+
+    .story-body:first-of-type::first-letter {
+      font-family: var(--f-italic);
+      font-size: 3.8rem;
+      font-style: italic;
+      float: left;
+      line-height: 0.72;
+      margin-right: 0.35rem;
+      margin-top: 0.25rem;
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .story-sig {
+      margin-top: 2.25rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--f-italic);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--text-dim);
+    }
+
+    .story-sig small {
+      display: block;
+      font-family: var(--f-body);
+      font-style: normal;
+      font-size: 0.62rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    /* ============================================
+       VALUES
+    ============================================ */
+    #values { padding: 8rem 0; background: var(--bg); }
+
+    .values-head {
+      text-align: center;
+      max-width: 540px;
+      margin: 0 auto 4.5rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .values-card {
+      padding: 2.75rem 2.25rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s ease, transform 0.35s ease;
+      will-change: opacity, transform;
+    }
+
+    .values-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .values-card:hover::before { transform: scaleX(1); }
+    .values-card:hover { border-color: var(--border-s); transform: translateY(-4px); }
+
+    .values-num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      margin-bottom: 1.75rem;
+    }
+
+    .values-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 1.25rem;
+      color: var(--accent);
+    }
+
+    .values-name {
+      font-family: var(--f-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 0.7rem;
+      line-height: 1.2;
+    }
+
+    .values-desc {
+      font-size: 0.86rem;
+      line-height: 1.8;
+      color: var(--text-dim);
+    }
+
+    /* ============================================
+       MENU
+    ============================================ */
+    #menu { padding: 8rem 0; background: var(--bg3); }
+
+    .menu-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .menu-tabs {
+      display: flex;
+      border: 1px solid var(--border-s);
+      flex-shrink: 0;
+    }
+
+    .tab-btn {
+      padding: 0.65rem 1.6rem;
+      font-size: 0.66rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      border-right: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.22s ease;
+    }
+
+    .tab-btn:last-child { border-right: none; }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .menu-card {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 1.25rem;
+      align-items: start;
+      padding: 1.25rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      transition: border-color 0.22s ease;
+    }
+
+    .menu-card:hover { border-color: var(--border-s); }
+
+    .menu-thumb { width: 96px; height: 72px; flex-shrink: 0; }
+
+    .menu-thumb.brunch {
+      /* REPLACE: brunch food photo */
+      background: linear-gradient(140deg, #4a3820 0%, #5a4830 50%, #6a5840 100%);
+    }
+
+    .menu-thumb.burger {
+      /* REPLACE: burger photo */
+      background: linear-gradient(140deg, #5a3820 0%, #6a4428 50%, #7a5030 100%);
+    }
+
+    .menu-thumb.bowl {
+      /* REPLACE: bowl photo */
+      background: linear-gradient(140deg, #2a3820 0%, #3a4a28 50%, #486038 100%);
+    }
+
+    .menu-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+
+    .menu-desc {
+      font-size: 0.76rem;
+      line-height: 1.6;
+      color: var(--text-dim);
+      margin-bottom: 0.6rem;
+    }
+
+    .menu-price {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .menu-footer { margin-top: 3rem; text-align: center; }
+
+    /* ============================================
+       PHOTO STRIP
+    ============================================ */
+    #photos { background: var(--bg); }
+
+    .photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+
+    .photo-cell { aspect-ratio: 1; overflow: hidden; position: relative; will-change: opacity, transform; }
+
+    .photo-cell-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .photo-cell:hover .photo-cell-inner { transform: scale(1.05); }
+
+    /* REPLACE each with real photography */
+    .photo-cell:nth-child(1) .photo-cell-inner { background: linear-gradient(135deg, #3a2818 0%, #4a3820 50%, #5a4828 100%); }
+    .photo-cell:nth-child(2) .photo-cell-inner { background: linear-gradient(135deg, #283818 0%, #384822 50%, #485e2e 100%); }
+    .photo-cell:nth-child(3) .photo-cell-inner { background: linear-gradient(135deg, #4a3018 0%, #5a4022 50%, #6a5030 100%); }
+    .photo-cell:nth-child(4) .photo-cell-inner { background: linear-gradient(135deg, #3c3428 0%, #4c4436 50%, #5c5442 100%); }
+
+    /* ============================================
+       SPECIALS
+    ============================================ */
+    #specials { padding: 8rem 0; background: var(--bg2); }
+
+    .specials-head {
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto 4.5rem;
+    }
+
+    .specials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .special-card {
+      padding: 3.25rem 2.75rem;
+      position: relative;
+      overflow: hidden;
+      will-change: opacity, transform;
+    }
+
+    .special-card-dark {
+      background: var(--bg4);
+      border: 1px solid var(--border-s);
+    }
+
+    .special-card-light {
+      background: var(--bg3);
+      border: 1px solid var(--border-s);
+    }
+
+    .special-day {
+      font-size: 0.58rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--accent);
+      margin-bottom: 0.85rem;
+    }
+
+    .special-title {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.08;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    .special-desc {
+      font-size: 0.86rem;
+      line-height: 1.75;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+    }
+
+    .special-time {
+      font-size: 0.66rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 2.25rem;
+    }
+
+    .btn-spl-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--f-body);
+      font-size: 0.66rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: none;
+      transition: background 0.22s;
+      cursor: pointer;
+    }
+
+    .btn-spl-dark:hover { background: var(--accent-h); }
+
+    .btn-spl-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--accent);
+      font-family: var(--f-body);
+      font-size: 0.66rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid var(--accent);
+      transition: all 0.22s;
+      cursor: pointer;
+    }
+
+    .btn-spl-light:hover { background: var(--accent); color: #fff; }
+
+    .special-watermark {
+      position: absolute;
+      right: -0.5rem;
+      bottom: -0.75rem;
+      font-family: var(--f-display);
+      font-size: 7rem;
+      font-weight: 900;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -0.04em;
+      color: rgba(212,134,94,0.08);
+    }
+
+    /* ============================================
+       QUOTE
+    ============================================ */
+    #quote {
+      position: relative;
+      padding: 11rem 0;
+      overflow: hidden;
+    }
+
+    .quote-bg {
+      position: absolute;
+      inset: -25%;
+      will-change: transform;
+      /* REPLACE: dramatic kitchen/food image for dark parallax */
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,134,94,0.2) 0%, transparent 55%),
+        linear-gradient(160deg, #0d0805 0%, #1a1008 45%, #221510 100%);
+    }
+
+    .quote-veil {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,6,4,0.72);
+    }
+
+    .quote-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .quote-mark {
+      font-family: var(--f-italic);
+      font-size: 6rem;
+      color: var(--accent);
+      line-height: 0.4;
+      display: block;
+      margin-bottom: 1.5rem;
+      opacity: 0.7;
+    }
+
+    .quote-body {
+      font-family: var(--f-italic);
+      font-size: clamp(1.4rem, 3vw, 2.3rem);
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.52;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.4);
+      margin-bottom: 2.25rem;
+      will-change: transform, opacity;
+    }
+
+    .quote-attr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      color: var(--text-muted);
+    }
+
+    .quote-attr-line {
+      display: inline-block;
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    /* ============================================
+       LOCATIONS
+    ============================================ */
+    #locations { padding: 8rem 0; background: var(--bg); }
+
+    .locations-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .locations-note {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .loc-card {
+      background: var(--bg);
+      padding: 2.75rem 2rem;
+      transition: background 0.28s ease;
+      will-change: opacity, transform;
+    }
+
+    .loc-card:hover { background: var(--bg2); }
+
+    .loc-num {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+    }
+
+    .loc-name {
+      font-family: var(--f-display);
+      font-size: 1.55rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+      line-height: 1.15;
+    }
+
+    .loc-address {
+      font-size: 0.8rem;
+      line-height: 1.65;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+    }
+
+    .loc-hours-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+
+    .loc-hours {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 2.25rem;
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--border-s);
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-dim);
+      transition: all 0.22s ease;
+    }
+
+    .btn-wa:hover {
+      border-color: #25D366;
+      color: #25D366;
+    }
+
+    .btn-wa svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      background: #0d0907;
+      padding: 4.5rem 0 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(240,234,216,0.06);
+    }
+
+    .footer-logo {
+      font-family: var(--f-display);
+      font-size: 2.2rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 260px;
+      margin-bottom: 1.75rem;
+    }
+
+    .footer-socials { display: flex; gap: 1.25rem; }
+
+    .footer-socials a {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    .footer-socials a:hover { color: var(--text); }
+
+    .footer-col-title {
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+      opacity: 0.6;
+    }
+
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .footer-links a {
+      font-size: 0.84rem;
+      color: rgba(240,234,216,0.38);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+
+    .footer-bar-right { display: flex; gap: 1.5rem; }
+
+    .footer-bar-right a {
+      font-size: 0.66rem;
+      color: var(--text-muted);
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+
+    .footer-bar-right a:hover { opacity: 1; }
+
+    /* ============================================
+       WHATSAPP FLOAT
+    ============================================ */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 52px;
+      height: 52px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 500;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.32);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.46);
+    }
+
+    .wa-float svg { width: 26px; height: 26px; fill: #fff; }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 1024px) {
+      .locations-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      #hero { padding-bottom: 5rem; padding-top: 5rem; }
+      .hero-ring { display: none; }
+      .hero-watermark { font-size: 42vw; right: -5%; bottom: 5%; }
+      .hero-title { font-size: 17vw; }
+      .hero-scroll { display: none; }
+      .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .story-image-wrap { display: none; }
+      .values-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .menu-head { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      .menu-tabs { overflow-x: auto; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .specials-grid { grid-template-columns: 1fr; }
+      .locations-grid { grid-template-columns: 1fr; }
+      .locations-head { flex-direction: column; align-items: flex-start; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer-bar { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      #story, #values, #menu, #specials, #locations { padding: 5rem 0; }
+      #quote { padding: 7rem 0; }
+      .container { padding: 0 1.25rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track    { animation: none; }
+      .hero-scroll-line { animation: none; }
+      .photo-cell-inner { transition: none; }
+      .values-card      { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- LOADER -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-brand">
+      <span class="loader-letter">N</span><span class="loader-letter">ü</span><span class="loader-letter">d</span><span class="loader-letter">e</span><span class="loader-letter">.</span>
+    </div>
+    <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
+    <div class="loader-sub" id="loaderSub">Born in Bali · Est. 2016</div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav" role="navigation" aria-label="Primary">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">Nüde.</a>
+        <ul class="nav-links">
+          <li><a href="#story">Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#specials">Specials</a></li>
+          <li><a href="#locations">Locations</a></li>
+        </ul>
+        <a href="#locations" class="nav-cta">Reserve</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav-overlay" id="navOverlay" role="dialog" aria-label="Site navigation" aria-hidden="true">
+    <a href="#story"     class="overlay-link">Story</a>
+    <a href="#menu"      class="overlay-link">Menu</a>
+    <a href="#specials"  class="overlay-link">Specials</a>
+    <a href="#locations" class="overlay-link">Locations</a>
+    <div class="overlay-divider" aria-hidden="true"></div>
+    <a href="#locations" class="overlay-cta">Reserve a Table</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-ring" aria-hidden="true"></div>
+    <span class="hero-watermark" aria-hidden="true">ü</span>
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Est. 2016 &nbsp;·&nbsp; Bali, Indonesia</p>
+        <div class="hero-title-wrap">
+          <span class="hero-title">Nüde.</span>
+        </div>
+        <p class="hero-sub">Real people, honest food, good coffee. Bali's original neighbourhood café — a place that genuinely feels like home.</p>
+        <div class="hero-ctas">
+          <a href="#menu"  class="btn btn-primary">View the Menu</a>
+          <a href="#story" class="btn btn-ghost">Our Story</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="hero-scroll-label">Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div id="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <div class="marquee-item"><span class="marquee-text">Real People</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Honest Food</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">All Nüde</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Born in Bali</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Est. 2016</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Four Locations</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">All Day Brunch</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Community First</span><span class="marquee-dot"></span></div>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <div class="marquee-item"><span class="marquee-text">Real People</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Honest Food</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">All Nüde</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Born in Bali</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Est. 2016</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Four Locations</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">All Day Brunch</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Community First</span><span class="marquee-dot"></span></div>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <div class="marquee-item"><span class="marquee-text">Real People</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Honest Food</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">All Nüde</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Born in Bali</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Est. 2016</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Four Locations</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">All Day Brunch</span><span class="marquee-dot"></span></div>
+        <div class="marquee-item"><span class="marquee-text">Community First</span><span class="marquee-dot"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image-wrap">
+          <div class="story-img" role="img" aria-label="Nüde Café — dark moody interior portrait"></div>
+          <div class="story-badge" aria-hidden="true">
+            <span class="badge-year">16</span>
+            <span class="badge-est">Est.</span>
+          </div>
+        </div>
+        <div class="story-text">
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title">Born from the belief that food should be honest.</h2>
+          <p class="story-body">We opened our doors in Berawa back in 2016 with one simple idea: create a space where people feel genuinely at home. No pretence, no theatre — just good food, good coffee, and the kind of warmth that makes you want to linger.</p>
+          <p class="story-body">What started as an intimate spot for friends grew into something we never could have planned — a real community. Locals, expats, nomads, travellers. All finding the same thing at the same table: a place that feels real in a world that often doesn't.</p>
+          <p class="story-body">Today we have four homes across Bali. The menu has evolved, the team has grown, and the spaces have changed — but the spirit has never wavered. We are, and always will be, nüde.</p>
+          <div class="story-sig">
+            The Nüde Team
+            <small>Berawa · Umalas · Babakan · Pererenan</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section id="values">
+    <div class="container">
+      <div class="values-head">
+        <p class="section-label">What we stand for</p>
+        <h2 class="section-title">Three things we refuse to compromise on.</h2>
+      </div>
+      <div class="values-grid">
+        <div class="values-card">
+          <div class="values-num">01</div>
+          <svg class="values-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+            <path d="M18 7C11.4 7 6 12.4 6 19s5.4 12 12 12 12-5.4 12-12S24.6 7 18 7z"/>
+            <path d="M12 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+            <circle cx="18" cy="19" r="2.2"/>
+          </svg>
+          <h3 class="values-name">Honest Food</h3>
+          <p class="values-desc">Every dish is prepared with care and served without compromise. Real ingredients, real flavour. Nothing hidden — nothing performed.</p>
+        </div>
+        <div class="values-card">
+          <div class="values-num">02</div>
+          <svg class="values-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+            <circle cx="14" cy="13" r="4.5"/>
+            <circle cx="24" cy="16.5" r="3.5"/>
+            <path d="M4 32c0-5.5 4.5-10 10-10h3c5.5 0 10 4.5 10 10"/>
+          </svg>
+          <h3 class="values-name">Real Community</h3>
+          <p class="values-desc">We are nothing without the people who walk through our doors. Locals and visitors alike — everyone belongs at the nüde table.</p>
+        </div>
+        <div class="values-card">
+          <div class="values-num">03</div>
+          <svg class="values-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+            <path d="M18 5C15 9 9 13 9 21c0 5 4 9 9 9s9-4 9-9C27 13 21 9 18 5z"/>
+            <path d="M14 24c0-2.2 1.8-4 4-4s4 1.8 4 4"/>
+          </svg>
+          <h3 class="values-name">Bali Born</h3>
+          <p class="values-desc">Rooted in the warmth and spirit of Bali. Our island shapes how we cook, how we host, and how we see the world around us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="container">
+      <div class="menu-head">
+        <div>
+          <p class="section-label">The Menu</p>
+          <h2 class="section-title">Something honest for every hour.</h2>
+        </div>
+        <div class="menu-tabs" role="tablist">
+          <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-brunch"  id="btn-brunch"  onclick="switchTab('tab-brunch',this)">Brunch</button>
+          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-burgers" id="btn-burgers" onclick="switchTab('tab-burgers',this)">Burgers</button>
+          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-bowls"   id="btn-bowls"   onclick="switchTab('tab-bowls',this)">Bowls</button>
+        </div>
+      </div>
+
+      <div id="tab-brunch" class="tab-panel active" role="tabpanel">
+        <div class="menu-grid">
+          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Açaí Power Bowl</div><div class="menu-desc">Wild açaí, seasonal fruit, toasted granola, honey, coconut flakes</div><div class="menu-price">IDR 85k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Smashed Avo Toast</div><div class="menu-desc">Sourdough, avocado, poached eggs, dukkah, chilli flakes</div><div class="menu-price">IDR 78k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Eggs Benny — Nüde Style</div><div class="menu-desc">English muffin, smoked salmon, poached eggs, house hollandaise</div><div class="menu-price">IDR 95k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Full Nüde Breakfast</div><div class="menu-desc">Eggs your way, bacon, sausage, grilled tomato, sourdough toast</div><div class="menu-price">IDR 115k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Tropical Smoothie Bowl</div><div class="menu-desc">Mango, pineapple, banana base, kiwi, chia seeds, coconut yoghurt</div><div class="menu-price">IDR 72k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Bali Breakfast Wrap</div><div class="menu-desc">Scrambled eggs, roasted veg, cheddar, avocado, sriracha, tortilla</div><div class="menu-price">IDR 82k</div></div></div>
+        </div>
+      </div>
+
+      <div id="tab-burgers" class="tab-panel" role="tabpanel">
+        <div class="menu-grid">
+          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">The Classic Nüde</div><div class="menu-desc">180g beef patty, house sauce, iceberg, tomato, pickles, cheddar, brioche</div><div class="menu-price">IDR 115k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">Double Stack</div><div class="menu-desc">Two smash patties, American cheese, house sauce, pickles, onion, sesame bun</div><div class="menu-price">IDR 145k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">Crispy Chicken</div><div class="menu-desc">Buttermilk fried chicken, house slaw, pickled jalapeños, honey mustard</div><div class="menu-price">IDR 108k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">Mushroom Melt</div><div class="menu-desc">Portobello, caramelised onion, goat cheese, rocket, sourdough bun</div><div class="menu-price">IDR 105k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">Fish &amp; Chips Burger</div><div class="menu-desc">Beer-battered snapper, tartare, iceberg, lemon, thick-cut fries</div><div class="menu-price">IDR 118k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">The Green One</div><div class="menu-desc">House veggie patty, hummus, roasted capsicum, cucumber, herb mayo</div><div class="menu-price">IDR 98k</div></div></div>
+        </div>
+      </div>
+
+      <div id="tab-bowls" class="tab-panel" role="tabpanel">
+        <div class="menu-grid">
+          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">Classic Poke Bowl</div><div class="menu-desc">Sashimi-grade tuna, sushi rice, edamame, cucumber, pickled ginger, sesame</div><div class="menu-price">IDR 125k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">The Grain Bowl</div><div class="menu-desc">Quinoa, roasted sweet potato, kale, tahini dressing, pumpkin seeds, lemon</div><div class="menu-price">IDR 105k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">Buddha Bowl</div><div class="menu-desc">Brown rice, chickpeas, avocado, cherry tomato, beets, miso ginger dressing</div><div class="menu-price">IDR 98k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">Protein Bowl</div><div class="menu-desc">Grilled chicken, brown rice, broccoli, soft egg, edamame, teriyaki glaze</div><div class="menu-price">IDR 118k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">Salmon Noodle Bowl</div><div class="menu-desc">Soba noodles, teriyaki salmon, bok choy, sesame oil, spring onion, nori</div><div class="menu-price">IDR 132k</div></div></div>
+          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">Vegan Power Bowl</div><div class="menu-desc">Falafel, roasted cauliflower, tabbouleh, [vegan] tzatziki, pomegranate</div><div class="menu-price">IDR 108k</div></div></div>
+        </div>
+      </div>
+
+      <div class="menu-footer">
+        <a href="https://nude-bali.com/menu" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Full Menu ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section id="photos" aria-label="Gallery">
+    <div class="photo-grid">
+      <div class="photo-cell"><div class="photo-cell-inner" role="img" aria-label="Nüde Café dark interior — candlelit atmosphere"></div></div>
+      <div class="photo-cell"><div class="photo-cell-inner" role="img" aria-label="Moody food close-up — fresh brunch plate"></div></div>
+      <div class="photo-cell"><div class="photo-cell-inner" role="img" aria-label="The classic Nüde burger — dark background"></div></div>
+      <div class="photo-cell"><div class="photo-cell-inner" role="img" aria-label="Evening community moment at Nüde Café"></div></div>
+    </div>
+  </section>
+
+  <!-- SPECIALS -->
+  <section id="specials">
+    <div class="container">
+      <div class="specials-head">
+        <p class="section-label">Weekly Specials</p>
+        <h2 class="section-title">Because every week deserves something to look forward to.</h2>
+      </div>
+      <div class="specials-grid">
+        <div class="special-card special-card-dark">
+          <div class="special-day">Every Wednesday</div>
+          <h3 class="special-title">Burger Wednesday</h3>
+          <p class="special-desc">Two burgers are better than one. Join us every Wednesday from 3 PM and get two of your favourite Nüde burgers for the price of one.</p>
+          <p class="special-time">From 3:00 PM · All Branches</p>
+          <a href="https://wa.me/62000000000" target="_blank" rel="noopener noreferrer" class="btn-spl-dark">Claim Your Table →</a>
+          <span class="special-watermark" aria-hidden="true">2×1</span>
+        </div>
+        <div class="special-card special-card-light">
+          <div class="special-day">Every Friday</div>
+          <h3 class="special-title">Feel Good Friday</h3>
+          <p class="special-desc">End your week the right way. Fifty percent off dinner [including burgers], plus cocktails for just 50k. You deserve it.</p>
+          <p class="special-time">From 6:00 PM · All Branches</p>
+          <a href="https://wa.me/62000000000" target="_blank" rel="noopener noreferrer" class="btn-spl-light">Claim Your Table →</a>
+          <span class="special-watermark" aria-hidden="true">50%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section id="quote">
+    <div class="quote-bg" id="quoteBg" aria-hidden="true"></div>
+    <div class="quote-veil" aria-hidden="true"></div>
+    <div class="container">
+      <div class="quote-inner">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <blockquote class="quote-body">
+          You might forget what we said or what we did — but we hope you'll always remember how we made you feel.
+        </blockquote>
+        <p class="quote-attr">
+          <span class="quote-attr-line" aria-hidden="true"></span>
+          The Nüde Philosophy
+          <span class="quote-attr-line" aria-hidden="true"></span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section id="locations">
+    <div class="container">
+      <div class="locations-head">
+        <div>
+          <p class="section-label">Find Us</p>
+          <h2 class="section-title">Four homes across Bali.</h2>
+        </div>
+        <p class="locations-note">Walk-ins are always welcome. Reserve via WhatsApp for groups of 6 or more.</p>
+      </div>
+      <div class="locations-grid">
+        <div class="loc-card">
+          <div class="loc-num">01</div>
+          <h3 class="loc-name">Berawa</h3>
+          <p class="loc-address">Jl. Pantai Berawa,<br>Tibubeneng, Kuta Utara,<br>Bali 80361</p>
+          <span class="loc-hours-label">Hours</span>
+          <p class="loc-hours">Daily &nbsp;7:00 AM – 10:00 PM</p>
+          <a href="https://wa.me/62000000001" target="_blank" rel="noopener noreferrer" class="btn-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve via WhatsApp</a>
+        </div>
+        <div class="loc-card">
+          <div class="loc-num">02</div>
+          <h3 class="loc-name">Umalas</h3>
+          <p class="loc-address">Jl. Umalas I,<br>Kerobokan Kelod, Kuta Utara,<br>Bali 80361</p>
+          <span class="loc-hours-label">Hours</span>
+          <p class="loc-hours">Daily &nbsp;7:00 AM – 10:00 PM</p>
+          <a href="https://wa.me/62000000002" target="_blank" rel="noopener noreferrer" class="btn-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve via WhatsApp</a>
+        </div>
+        <div class="loc-card">
+          <div class="loc-num">03</div>
+          <h3 class="loc-name">Babakan</h3>
+          <p class="loc-address">Jl. Babakan,<br>Seminyak, Kuta,<br>Bali 80361</p>
+          <span class="loc-hours-label">Hours</span>
+          <p class="loc-hours">Daily &nbsp;7:00 AM – 10:00 PM</p>
+          <a href="https://wa.me/62000000003" target="_blank" rel="noopener noreferrer" class="btn-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve via WhatsApp</a>
+        </div>
+        <div class="loc-card">
+          <div class="loc-num">04</div>
+          <h3 class="loc-name">Pererenan</h3>
+          <p class="loc-address">Jl. Pererenan,<br>Mengwi, Badung,<br>Bali 80351</p>
+          <span class="loc-hours-label">Hours</span>
+          <p class="loc-hours">Daily &nbsp;7:00 AM – 10:00 PM</p>
+          <a href="https://wa.me/62000000004" target="_blank" rel="noopener noreferrer" class="btn-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Nüde.</div>
+          <p class="footer-tagline">Real People, Honest Food, All Nüde. Bali's original neighbourhood café, established 2016.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/nudebali" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#menu">The Menu</a></li>
+            <li><a href="#specials">Specials</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="https://nude-bali.com/gallery" target="_blank" rel="noopener noreferrer">Gallery ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Visit Us</p>
+          <ul class="footer-links">
+            <li><a href="#locations">Berawa</a></li>
+            <li><a href="#locations">Umalas</a></li>
+            <li><a href="#locations">Babakan</a></li>
+            <li><a href="#locations">Pererenan</a></li>
+          </ul>
+          <p style="margin-top:1.5rem; font-size:0.72rem; color:var(--text-muted); opacity:0.5; line-height:1.7;">Daily<br>7:00 AM – 10:00 PM</p>
+        </div>
+      </div>
+      <div class="footer-bar">
+        <p class="footer-copy">© 2024 Nüde™ · All rights reserved.</p>
+        <div class="footer-bar-right">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#" id="backToTop">Back to top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/62000000000" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Contact Nüde on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <script>
+    'use strict';
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    let lenis;
+    if (!prefersReducedMotion) {
+      lenis = new Lenis({
+        duration: 1.25,
+        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true
+      });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(time => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id === '#') {
+          e.preventDefault();
+          if (lenis) lenis.scrollTo(0); else window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+        const target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          if (lenis) lenis.scrollTo(target, { offset: -80 });
+          else target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    /* Loader */
+    const loader     = document.getElementById('loader');
+    const loaderFill = document.getElementById('loaderFill');
+    const loaderSub  = document.getElementById('loaderSub');
+
+    if (!prefersReducedMotion) {
+      const loaderTl = gsap.timeline({ onComplete() { loader.style.display = 'none'; } });
+      loaderTl
+        .from('.loader-letter', { opacity: 0, y: 28, rotateX: -50, stagger: 0.08, duration: 0.6, ease: 'power3.out' })
+        .to(loaderFill, { scaleX: 1, duration: 0.7, ease: 'power2.inOut' }, '-=0.15')
+        .to(loaderSub, { opacity: 1, duration: 0.4, ease: 'power2.out' }, '-=0.3')
+        .to(loader, { yPercent: -100, duration: 0.88, ease: 'power3.inOut', delay: 0.42 })
+        .add(heroEntrance, '-=0.52');
+    } else {
+      loader.style.display = 'none';
+    }
+
+    function heroEntrance() {
+      const tl = gsap.timeline();
+      tl
+        .from('.hero-eyebrow', { opacity: 0, y: 14, duration: 0.5, ease: 'power2.out' })
+        .from('.hero-title', { clipPath: 'inset(0 100% 0 0)', duration: 1.0, ease: 'power3.inOut' }, '-=0.25')
+        .from('.hero-sub', { opacity: 0, y: 18, duration: 0.55, ease: 'power2.out' }, '-=0.55')
+        .from('.hero-ctas .btn', { opacity: 0, y: 14, stagger: 0.13, duration: 0.45, ease: 'power2.out' }, '-=0.35')
+        .from('.hero-scroll', { opacity: 0, duration: 0.5 }, '-=0.2')
+        .from('.hero-ring', { scale: 0.85, opacity: 0, duration: 1.4, ease: 'power2.out' }, 0);
+      return tl;
+    }
+
+    ScrollTrigger.create({
+      start: 'top -70',
+      onUpdate: self => document.getElementById('nav').classList.toggle('scrolled', self.progress > 0)
+    });
+
+    const hamburger  = document.getElementById('hamburger');
+    const navOverlay = document.getElementById('navOverlay');
+
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(open));
+      navOverlay.setAttribute('aria-hidden', String(!open));
+      navOverlay.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    navOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      navOverlay.setAttribute('aria-hidden', 'true');
+      navOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+
+    if (!prefersReducedMotion) {
+      gsap.from('.story-image-wrap', { x: -72, opacity: 0, duration: 0.95, ease: 'power3.out', scrollTrigger: { trigger: '#story', start: 'top 72%' } });
+      gsap.from('.story-text > *', { opacity: 0, y: 32, stagger: 0.11, duration: 0.72, ease: 'power2.out', scrollTrigger: { trigger: '.story-grid', start: 'top 66%' } });
+
+      ScrollTrigger.batch('.values-card', { onEnter: els => gsap.from(els, { opacity: 0, y: 44, scale: 0.96, stagger: 0.12, duration: 0.78, ease: 'power2.out' }), once: true, start: 'top 82%' });
+      ScrollTrigger.batch('.photo-cell', { onEnter: els => gsap.from(els, { opacity: 0, scale: 0.93, stagger: 0.09, duration: 0.82, ease: 'power2.out' }), once: true, start: 'top 86%' });
+      ScrollTrigger.batch('.special-card', { onEnter: els => gsap.from(els, { opacity: 0, y: 42, stagger: 0.14, duration: 0.82, ease: 'power2.out' }), once: true, start: 'top 78%' });
+
+      gsap.to('#quoteBg', { yPercent: -22, ease: 'none', scrollTrigger: { trigger: '#quote', start: 'top bottom', end: 'bottom top', scrub: 1.6 } });
+      gsap.fromTo('.quote-body', { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, scrollTrigger: { trigger: '#quote', start: 'top 62%', end: 'center 38%', scrub: 1 } });
+
+      ScrollTrigger.batch('.loc-card', { onEnter: els => gsap.from(els, { opacity: 0, y: 38, stagger: 0.1, duration: 0.72, ease: 'power2.out' }), once: true, start: 'top 82%' });
+      gsap.utils.toArray('.section-label, .section-title').forEach(el => { gsap.from(el, { opacity: 0, y: 20, duration: 0.65, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%' } }); });
+    }
+
+    function switchTab(id, btn) {
+      const current = document.querySelector('.tab-panel.active');
+      if (!current || current.id === id) return;
+      document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      const next = document.getElementById(id);
+      if (prefersReducedMotion) { current.classList.remove('active'); next.classList.add('active'); return; }
+      gsap.to(current, { opacity: 0, y: 8, duration: 0.22, ease: 'power2.in', onComplete() {
+        current.classList.remove('active'); current.style.cssText = '';
+        next.classList.add('active');
+        gsap.fromTo(next, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.36, ease: 'power2.out', onComplete: animateMenuItems });
+      }});
+    }
+
+    function animateMenuItems() {
+      if (prefersReducedMotion) return;
+      gsap.from(document.querySelectorAll('.tab-panel.active .menu-card'), { opacity: 0, y: 22, stagger: 0.055, duration: 0.48, ease: 'power2.out' });
+    }
+    animateMenuItems();
+
+    if (window.matchMedia('(pointer: fine)').matches && !prefersReducedMotion) {
+      const cursor = document.getElementById('cursor');
+      document.addEventListener('mousemove', e => gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.32, ease: 'power2.out' }));
+      document.addEventListener('mouseleave', () => gsap.to(cursor, { opacity: 0, duration: 0.2 }));
+      document.addEventListener('mouseenter', () => gsap.to(cursor, { opacity: 1, duration: 0.2 }));
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 2.8, opacity: 0.55, duration: 0.25 }));
+        el.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.25 }));
+      });
+    }
+
+    document.getElementById('backToTop')?.addEventListener('click', e => {
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(0); else window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
