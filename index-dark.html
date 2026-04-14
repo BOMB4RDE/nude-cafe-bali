@@ -6,1894 +6,954 @@
   <title>Nüde — Real People, Honest Food, All Nüde | Bali</title>
   <meta name="description" content="Nüde is Bali's original neighbourhood café. Real people, honest food, and good coffee across four locations: Berawa, Umalas, Babakan, and Pererenan.">
   <meta property="og:title" content="Nüde Café Bali — Real People, Honest Food">
-  <meta property="og:description" content="Born in Bali, 2016. Four locations across the island. All-day brunch, Bali's best burgers, honest bowls, and good coffee.">
+  <meta property="og:description" content="Born in Bali, 2016. Four locations. All-day brunch, Bali's best burgers, honest bowls, and good coffee.">
   <meta property="og:type" content="website">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "Nüde Café",
-    "description": "Real People, Honest Food, All Nüde. Bali's original neighbourhood café, est. 2016.",
-    "url": "https://nude-bali.com",
-    "servesCuisine": ["All-day Brunch", "Burgers", "Bowls"],
-    "openingHours": "Mo-Su 07:00-22:00",
-    "sameAs": ["https://www.instagram.com/nudebali"]
-  }
-  </script>
-
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Nüde Café","description":"Real People, Honest Food, All Nüde. Bali's original neighbourhood café, est. 2016.","url":"https://nude-bali.com","servesCuisine":["All-day Brunch","Burgers","Bowls"],"openingHours":"Mo-Su 07:00-22:00","sameAs":["https://www.instagram.com/nudebali"]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
 
   <style>
-    /* ============================================
-       RESET + ROOT — DARK PALETTE
-    ============================================ */
+    /* ── RESET ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:           #16100d;
-      --bg2:          #1e1511;
-      --bg3:          #261a14;
-      --bg4:          #2e211a;
-      --text:         #f0ead8;
-      --text-dim:     #9a8a7e;
-      --text-muted:   #5e5048;
-      --accent:       #d4865e;
-      --accent-h:     #c07248;
-      --accent2:      #7ab87d;
-      --border:       rgba(240,234,216,0.07);
-      --border-s:     rgba(240,234,216,0.14);
-      --f-display:    'Playfair Display', Georgia, serif;
-      --f-italic:     'Cormorant Garamond', Georgia, serif;
-      --f-body:       'DM Sans', system-ui, sans-serif;
+      --bg:          #14100d;
+      --bg2:         #1c1511;
+      --bg3:         #241a14;
+      --bg4:         #2e2219;
+      --ink:         #f0e8d8;
+      --ink-dim:     #8a7a6e;
+      --ink-muted:   #5a4d45;
+      --rust:        #d4865e;
+      --rust-h:      #c07348;
+      --sage:        #7ab87d;
+      --rule:        rgba(240,232,216,.08);
+      --rule-s:      rgba(240,232,216,.16);
+      --f-serif:     'Playfair Display', Georgia, serif;
+      --f-italic:    'Cormorant Garamond', Georgia, serif;
+      --f-sans:      'DM Sans', system-ui, sans-serif;
     }
 
     html { scroll-behavior: auto; }
 
     body {
-      font-family: var(--f-body);
+      font-family: var(--f-sans);
       background: var(--bg);
-      color: var(--text);
+      color: var(--ink);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    img { display: block; max-width: 100%; }
+    img { display: block; max-width: 100%; height: 100%; object-fit: cover; }
     a   { color: inherit; text-decoration: none; }
-    button { font-family: var(--f-body); cursor: pointer; border: none; background: none; }
+    button { font-family: var(--f-sans); cursor: pointer; border: none; background: none; }
 
-    .container {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* ============================================
-       GRAIN
-    ============================================ */
     body::after {
       content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9998;
-      opacity: 0.055;
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9998; opacity: 0.06;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      background-size: 200px 200px;
+      background-repeat: repeat; background-size: 200px;
     }
 
-    /* ============================================
-       CURSOR
-    ============================================ */
     .cursor {
-      position: fixed;
-      width: 10px;
-      height: 10px;
-      background: var(--accent);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 10000;
-      transform: translate(-50%, -50%);
-      will-change: transform;
+      position: fixed; width: 10px; height: 10px;
+      background: var(--rust); border-radius: 50%;
+      pointer-events: none; z-index: 10000;
+      transform: translate(-50%,-50%); mix-blend-mode: screen; will-change: transform;
     }
-
     @media (pointer: coarse) { .cursor { display: none; } }
 
-    /* ============================================
-       LOADER
-    ============================================ */
     #loader {
-      position: fixed;
-      inset: 0;
-      background: var(--bg);
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1.25rem;
+      position: fixed; inset: 0; background: var(--bg); z-index: 9999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem;
     }
 
     .loader-brand {
-      font-family: var(--f-display);
-      font-size: clamp(3.5rem, 9vw, 7rem);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--text);
-      letter-spacing: -0.02em;
-      display: flex;
-      gap: 0.02em;
-      line-height: 1;
+      font-family: var(--f-serif); font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 400; font-style: italic; color: var(--ink);
+      letter-spacing: -0.025em; display: flex; line-height: 1;
     }
 
     .loader-letter { display: inline-block; will-change: transform, opacity; }
 
-    .loader-bar {
-      width: 48px;
-      height: 1.5px;
-      background: var(--border-s);
-      position: relative;
-      overflow: hidden;
+    .loader-bar { width: 56px; height: 1px; background: var(--rule-s); position: relative; overflow: hidden; }
+    .loader-bar-fill { position: absolute; inset: 0; background: var(--rust); transform: scaleX(0); transform-origin: left; }
+
+    .loader-tag {
+      font-size: 0.58rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.3em; color: var(--ink-muted); opacity: 0;
     }
 
-    .loader-bar-fill {
-      position: absolute;
-      inset: 0;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      will-change: transform;
-    }
-
-    .loader-sub {
-      font-size: 0.6rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
-      color: var(--text-muted);
-      opacity: 0;
-    }
-
-    /* ============================================
-       NAV
-    ============================================ */
     #nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.6rem 0;
-      transition: padding 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.8rem 0;
+      transition: padding .4s ease, background .4s ease, border-color .4s ease;
       border-bottom: 1px solid transparent;
     }
 
     #nav.scrolled {
       padding: 1rem 0;
-      background: rgba(22,16,13,0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-color: var(--border);
+      background: rgba(20,16,13,.94);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-color: var(--rule);
     }
 
     .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      max-width: 1260px; margin: 0 auto; padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
     }
 
-    .nav-logo {
-      font-family: var(--f-display);
-      font-size: 1.6rem;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--text);
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
+    .nav-logo { font-family: var(--f-serif); font-size: 1.7rem; font-weight: 400; font-style: italic; letter-spacing: -0.025em; line-height: 1; }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.75rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
 
     .nav-links a {
-      font-size: 0.72rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-dim);
-      transition: color 0.2s;
-      position: relative;
+      font-size: 0.68rem; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.14em; color: var(--ink-dim); position: relative; transition: color .2s;
     }
 
     .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -3px; left: 0; right: 0;
-      height: 1px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
+      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+      height: 1px; background: var(--rust); transform: scaleX(0);
+      transform-origin: left; transition: transform .3s ease;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover { color: var(--ink); }
     .nav-links a:hover::after { transform: scaleX(1); }
 
     .nav-cta {
-      padding: 0.6rem 1.6rem;
-      border: 1px solid var(--border-s);
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text);
-      transition: all 0.22s ease;
-      display: inline-block;
+      padding: .58rem 1.5rem; border: 1px solid var(--rule-s);
+      font-size: 0.66rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.16em; color: var(--ink); transition: all .22s ease;
     }
 
-    .nav-cta:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
+    .nav-cta:hover { background: var(--ink); color: var(--bg); }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5.5px;
-      cursor: pointer;
-      padding: 4px;
-      z-index: 200;
-      position: relative;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 1.5px;
-      background: var(--text);
-      transition: all 0.32s ease;
-      transform-origin: center;
-    }
-
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; z-index: 200; position: relative; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all .3s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
     .nav-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(22,16,13,0.98);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      z-index: 150;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.25rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.32s ease;
+      position: fixed; inset: 0;
+      background: rgba(20,16,13,.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      z-index: 150; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity .32s ease;
     }
 
     .nav-overlay.open { opacity: 1; pointer-events: all; }
 
-    .overlay-link {
-      font-family: var(--f-display);
-      font-size: clamp(2rem, 6vw, 2.8rem);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--text);
-      padding: 0.6rem 1.5rem;
-      transition: color 0.2s;
-      text-align: center;
+    .nav-overlay a {
+      font-family: var(--f-serif); font-size: clamp(2rem, 7vw, 3.5rem);
+      font-style: italic; font-weight: 400; color: var(--ink); padding: .5rem 0; transition: color .2s;
     }
 
-    .overlay-link:hover { color: var(--accent); }
+    .nav-overlay a:hover { color: var(--rust); }
 
-    .overlay-cta {
-      margin-top: 1.5rem;
-      padding: 0.85rem 2.5rem;
-      border: 1px solid var(--border-s);
-      font-family: var(--f-body);
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--text);
-      display: inline-block;
-      transition: all 0.2s;
-    }
+    .overlay-close { position: absolute; top: 2rem; right: 2.5rem; font-size: 1.6rem; cursor: pointer; color: var(--ink-dim); transition: color .2s; }
+    .overlay-close:hover { color: var(--ink); }
 
-    .overlay-cta:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
+    @media (max-width: 768px) { .nav-links, .nav-cta { display: none; } .hamburger { display: flex; } }
 
-    .overlay-divider {
-      width: 1px;
-      height: 40px;
-      background: var(--border-s);
-      margin: 1rem 0;
-    }
-
-    /* ============================================
-       HERO
-    ============================================ */
     #hero {
-      min-height: 100svh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding-bottom: 6rem;
-      padding-top: 7rem;
-      position: relative;
-      overflow: hidden;
+      position: relative; min-height: 100svh;
+      display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
     }
 
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      /* REPLACE: full-bleed hero image — dark moody Bali café interior or food */
-      background:
-        radial-gradient(ellipse 90% 70% at 85% 15%, rgba(212,134,94,0.16) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 80% at 5% 85%, rgba(122,184,125,0.08) 0%, transparent 50%),
-        radial-gradient(ellipse 120% 50% at 50% 110%, rgba(30,21,17,0.8) 0%, transparent 45%),
-        var(--bg);
+    .hero-left {
+      position: relative; display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 7rem 4rem 4rem; z-index: 2;
     }
 
-    .hero-ring {
-      position: absolute;
-      width: 65vw;
-      height: 65vw;
-      max-width: 760px;
-      max-height: 760px;
-      border-radius: 50%;
-      border: 1px solid rgba(212,134,94,0.12);
-      top: 50%;
-      right: -8%;
-      transform: translateY(-48%);
-      pointer-events: none;
-      will-change: transform;
+    .hero-right { position: relative; overflow: hidden; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; }
+
+    .hero-right-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--bg) 0%, transparent 35%);
+      z-index: 1;
     }
 
-    .hero-ring::before {
-      content: '';
-      position: absolute;
-      inset: 36px;
-      border-radius: 50%;
-      border: 1px solid rgba(212,134,94,0.06);
-    }
-
-    .hero-ring::after {
-      content: '';
-      position: absolute;
-      inset: 90px;
-      border-radius: 50%;
-      border: 1px solid rgba(212,134,94,0.03);
-    }
-
-    .hero-watermark {
-      position: absolute;
-      right: 4%;
-      bottom: 10%;
-      font-family: var(--f-display);
-      font-size: 28vw;
-      font-weight: 900;
-      font-style: italic;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(212,134,94,0.06);
-      pointer-events: none;
-      user-select: none;
-      line-height: 0.85;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-    }
-
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.62rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
-      color: var(--accent);
-      margin-bottom: 1.75rem;
-      will-change: opacity, transform;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 28px;
-      height: 1px;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .hero-title-wrap { overflow: hidden; margin-bottom: 2rem; }
+    .hero-tag { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.28em; color: var(--rust); margin-bottom: 1.8rem; opacity: 0; }
 
     .hero-title {
-      font-family: var(--f-display);
-      font-size: clamp(4.5rem, 11vw, 10.5rem);
-      font-weight: 400;
-      font-style: italic;
-      line-height: 0.9;
-      letter-spacing: -0.025em;
-      color: var(--text);
-      display: block;
-      will-change: clip-path;
+      font-family: var(--f-serif); font-size: clamp(3.5rem, 6vw, 6rem);
+      font-weight: 400; line-height: 1.04; letter-spacing: -0.025em;
+      margin-bottom: 1.5rem; clip-path: inset(0 100% 0 0);
     }
 
-    .hero-sub {
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--text-dim);
-      line-height: 1.8;
-      max-width: 440px;
-      margin-bottom: 2.75rem;
-      will-change: opacity, transform;
+    .hero-title em { font-style: italic; color: var(--rust); }
+
+    .hero-body {
+      font-size: 1rem; font-weight: 300; line-height: 1.65;
+      color: var(--ink-dim); max-width: 38ch; margin-bottom: 2.5rem; opacity: 0;
     }
 
-    .hero-ctas {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+    .hero-ctas { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; opacity: 0; }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--f-body);
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      transition: all 0.22s ease;
-      cursor: pointer;
-      will-change: opacity, transform;
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.16em; padding: .85rem 2rem; transition: all .22s ease;
     }
 
-    .btn-primary {
-      padding: 1rem 2.75rem;
-      background: var(--accent);
-      color: #fff;
-      border: 1px solid var(--accent);
+    .btn-filled { background: var(--rust); color: var(--bg); }
+    .btn-filled:hover { background: var(--rust-h); }
+    .btn-ghost { border: 1px solid var(--rule-s); color: var(--ink); }
+    .btn-ghost:hover { border-color: var(--rule-s); background: rgba(240,232,216,.06); }
+
+    .hero-scroll-hint {
+      position: absolute; bottom: 2.5rem; left: 4rem;
+      display: flex; align-items: center; gap: .75rem;
+      font-size: 0.58rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.22em; color: var(--ink-muted); opacity: 0;
     }
 
-    .btn-primary:hover {
-      background: var(--accent-h);
-      border-color: var(--accent-h);
+    .hero-scroll-line { width: 40px; height: 1px; background: var(--ink-muted); position: relative; overflow: hidden; }
+    .hero-scroll-line::after { content: ''; position: absolute; inset: 0; background: var(--rust); animation: scroll-tick 2s ease-in-out infinite; }
+    @keyframes scroll-tick { 0% { transform: translateX(-100%); } 50% { transform: translateX(0); } 100% { transform: translateX(100%); } }
+
+    .hero-year { position: absolute; top: 50%; right: 3rem; transform: translateY(-50%) rotate(90deg); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,232,216,.3); z-index: 2; }
+
+    @media (max-width: 900px) {
+      #hero { grid-template-columns: 1fr; min-height: 100svh; }
+      .hero-right { position: absolute; inset: 0; z-index: 0; }
+      .hero-right-overlay { background: linear-gradient(to top, rgba(20,16,13,.82) 0%, transparent 55%); }
+      .hero-left { padding: 6rem 2rem 3.5rem; z-index: 2; min-height: 100svh; justify-content: flex-end; }
+      .hero-year { display: none; }
     }
 
-    .btn-ghost {
-      padding: 1rem 2.75rem;
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border-s);
-    }
+    .marquee { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 1.1rem 0; overflow: hidden; background: var(--bg2); }
+    .marquee-track { display: flex; width: max-content; animation: marquee-scroll 28s linear infinite; }
+    .marquee-item { display: flex; align-items: center; gap: 1.5rem; padding: 0 2.5rem; white-space: nowrap; }
+    .marquee-item span { font-family: var(--f-serif); font-size: 0.9rem; font-style: italic; font-weight: 400; color: var(--ink-dim); }
+    .marquee-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--rust); flex-shrink: 0; }
+    @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 2.5rem;
-      right: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.6rem;
-      z-index: 2;
-    }
-
-    .hero-scroll-label {
-      font-size: 0.58rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--text-muted);
-      writing-mode: vertical-rl;
-    }
-
-    .hero-scroll-line {
-      width: 1px;
-      height: 56px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-      animation: scrollPulse 2.2s ease-in-out infinite;
-    }
-
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.3; transform: scaleY(1); }
-      50%       { opacity: 0.9; transform: scaleY(1.08); }
-    }
-
-    /* ============================================
-       SECTION SHARED
-    ============================================ */
-    .section-label {
-      font-size: 0.62rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      color: var(--accent);
-      margin-bottom: 0.6rem;
-    }
-
-    .section-title {
-      font-family: var(--f-display);
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      font-weight: 400;
-      font-style: italic;
-      line-height: 1.12;
-      letter-spacing: -0.015em;
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
-
-    /* ============================================
-       MARQUEE
-    ============================================ */
-    #marquee {
-      padding: 1.15rem 0;
-      background: rgba(240,234,216,0.04);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      overflow: hidden;
-    }
-
-    .marquee-track {
-      display: flex;
-      white-space: nowrap;
-      animation: marqueeRoll 30s linear infinite;
-      will-change: transform;
-    }
-
-    .marquee-group {
-      display: inline-flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .marquee-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 2rem;
-      padding-right: 2rem;
-    }
-
-    .marquee-text {
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--text-muted);
-    }
-
-    .marquee-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    @keyframes marqueeRoll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* ============================================
-       STORY
-    ============================================ */
-    #story {
-      padding: 8rem 0;
-      background: var(--bg2);
-    }
+    #story { padding: 7rem 0 5rem; position: relative; overflow: hidden; }
 
     .story-grid {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 6rem;
-      align-items: center;
-    }
-
-    .story-image-wrap {
-      position: relative;
-      will-change: transform, opacity;
-    }
-
-    .story-img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      /* REPLACE: warm food close-up or café portrait — dark moody variant */
-      background: linear-gradient(150deg,
-        #3a2a1e 0%,
-        #4a3424 25%,
-        #5a4030 50%,
-        #6a4c3a 70%,
-        #7a5848 100%);
-    }
-
-    .story-badge {
-      position: absolute;
-      bottom: -1.75rem;
-      right: -1.75rem;
-      width: 96px;
-      height: 96px;
-      background: var(--accent);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1px;
-    }
-
-    .badge-year {
-      font-family: var(--f-display);
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1;
-    }
-
-    .badge-est {
-      font-size: 0.52rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.65);
-    }
-
-    .story-text { will-change: opacity, transform; }
-
-    .story-body {
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: var(--text-dim);
-      margin-bottom: 1.4rem;
-    }
-
-    .story-body:first-of-type::first-letter {
-      font-family: var(--f-italic);
-      font-size: 3.8rem;
-      font-style: italic;
-      float: left;
-      line-height: 0.72;
-      margin-right: 0.35rem;
-      margin-top: 0.25rem;
-      color: var(--accent);
-      font-weight: 400;
-    }
-
-    .story-sig {
-      margin-top: 2.25rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      font-family: var(--f-italic);
-      font-size: 1.25rem;
-      font-style: italic;
-      color: var(--text-dim);
-    }
-
-    .story-sig small {
-      display: block;
-      font-family: var(--f-body);
-      font-style: normal;
-      font-size: 0.62rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-      margin-top: 0.35rem;
-    }
-
-    /* ============================================
-       VALUES
-    ============================================ */
-    #values { padding: 8rem 0; background: var(--bg); }
-
-    .values-head {
-      text-align: center;
-      max-width: 540px;
-      margin: 0 auto 4.5rem;
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .values-card {
-      padding: 2.75rem 2.25rem;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.3s ease, transform 0.35s ease;
-      will-change: opacity, transform;
-    }
-
-    .values-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-
-    .values-card:hover::before { transform: scaleX(1); }
-    .values-card:hover { border-color: var(--border-s); transform: translateY(-4px); }
-
-    .values-num {
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 0.12em;
-      margin-bottom: 1.75rem;
-    }
-
-    .values-icon {
-      width: 36px;
-      height: 36px;
-      margin-bottom: 1.25rem;
-      color: var(--accent);
-    }
-
-    .values-name {
-      font-family: var(--f-display);
-      font-size: 1.4rem;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--text);
-      margin-bottom: 0.7rem;
-      line-height: 1.2;
-    }
-
-    .values-desc {
-      font-size: 0.86rem;
-      line-height: 1.8;
-      color: var(--text-dim);
-    }
-
-    /* ============================================
-       MENU
-    ============================================ */
-    #menu { padding: 8rem 0; background: var(--bg3); }
-
-    .menu-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-bottom: 3.5rem;
-    }
-
-    .menu-tabs {
-      display: flex;
-      border: 1px solid var(--border-s);
-      flex-shrink: 0;
-    }
-
-    .tab-btn {
-      padding: 0.65rem 1.6rem;
-      font-size: 0.66rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      background: transparent;
-      border: none;
-      border-right: 1px solid var(--border);
-      cursor: pointer;
-      transition: all 0.22s ease;
-    }
-
-    .tab-btn:last-child { border-right: none; }
-
-    .tab-btn.active,
-    .tab-btn:hover {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .menu-card {
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 1.25rem;
-      align-items: start;
-      padding: 1.25rem;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      transition: border-color 0.22s ease;
-    }
-
-    .menu-card:hover { border-color: var(--border-s); }
-
-    .menu-thumb { width: 96px; height: 72px; flex-shrink: 0; }
-
-    .menu-thumb.brunch {
-      /* REPLACE: brunch food photo */
-      background: linear-gradient(140deg, #4a3820 0%, #5a4830 50%, #6a5840 100%);
-    }
-
-    .menu-thumb.burger {
-      /* REPLACE: burger photo */
-      background: linear-gradient(140deg, #5a3820 0%, #6a4428 50%, #7a5030 100%);
-    }
-
-    .menu-thumb.bowl {
-      /* REPLACE: bowl photo */
-      background: linear-gradient(140deg, #2a3820 0%, #3a4a28 50%, #486038 100%);
-    }
-
-    .menu-name {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.3rem;
-      line-height: 1.3;
-    }
-
-    .menu-desc {
-      font-size: 0.76rem;
-      line-height: 1.6;
-      color: var(--text-dim);
-      margin-bottom: 0.6rem;
-    }
-
-    .menu-price {
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .menu-footer { margin-top: 3rem; text-align: center; }
-
-    /* ============================================
-       PHOTO STRIP
-    ============================================ */
-    #photos { background: var(--bg); }
-
-    .photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-
-    .photo-cell { aspect-ratio: 1; overflow: hidden; position: relative; will-change: opacity, transform; }
-
-    .photo-cell-inner {
-      width: 100%;
-      height: 100%;
-      transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .photo-cell:hover .photo-cell-inner { transform: scale(1.05); }
-
-    /* REPLACE each with real photography */
-    .photo-cell:nth-child(1) .photo-cell-inner { background: linear-gradient(135deg, #3a2818 0%, #4a3820 50%, #5a4828 100%); }
-    .photo-cell:nth-child(2) .photo-cell-inner { background: linear-gradient(135deg, #283818 0%, #384822 50%, #485e2e 100%); }
-    .photo-cell:nth-child(3) .photo-cell-inner { background: linear-gradient(135deg, #4a3018 0%, #5a4022 50%, #6a5030 100%); }
-    .photo-cell:nth-child(4) .photo-cell-inner { background: linear-gradient(135deg, #3c3428 0%, #4c4436 50%, #5c5442 100%); }
-
-    /* ============================================
-       SPECIALS
-    ============================================ */
-    #specials { padding: 8rem 0; background: var(--bg2); }
-
-    .specials-head {
-      text-align: center;
-      max-width: 520px;
-      margin: 0 auto 4.5rem;
-    }
-
-    .specials-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .special-card {
-      padding: 3.25rem 2.75rem;
-      position: relative;
-      overflow: hidden;
-      will-change: opacity, transform;
-    }
-
-    .special-card-dark {
-      background: var(--bg4);
-      border: 1px solid var(--border-s);
-    }
-
-    .special-card-light {
-      background: var(--bg3);
-      border: 1px solid var(--border-s);
-    }
-
-    .special-day {
-      font-size: 0.58rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
-      color: var(--accent);
-      margin-bottom: 0.85rem;
-    }
-
-    .special-title {
-      font-family: var(--f-display);
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 400;
-      font-style: italic;
-      line-height: 1.08;
-      margin-bottom: 1.25rem;
-      color: var(--text);
-    }
-
-    .special-desc {
-      font-size: 0.86rem;
-      line-height: 1.75;
-      color: var(--text-dim);
-      margin-bottom: 0.5rem;
-    }
-
-    .special-time {
-      font-size: 0.66rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-muted);
-      margin-bottom: 2.25rem;
-    }
-
-    .btn-spl-dark {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      background: var(--accent);
-      color: #fff;
-      font-family: var(--f-body);
-      font-size: 0.66rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      border: none;
-      transition: background 0.22s;
-      cursor: pointer;
-    }
-
-    .btn-spl-dark:hover { background: var(--accent-h); }
-
-    .btn-spl-light {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      background: transparent;
-      color: var(--accent);
-      font-family: var(--f-body);
-      font-size: 0.66rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      border: 1px solid var(--accent);
-      transition: all 0.22s;
-      cursor: pointer;
-    }
-
-    .btn-spl-light:hover { background: var(--accent); color: #fff; }
-
-    .special-watermark {
-      position: absolute;
-      right: -0.5rem;
-      bottom: -0.75rem;
-      font-family: var(--f-display);
-      font-size: 7rem;
-      font-weight: 900;
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-      letter-spacing: -0.04em;
-      color: rgba(212,134,94,0.08);
-    }
-
-    /* ============================================
-       QUOTE
-    ============================================ */
-    #quote {
-      position: relative;
-      padding: 11rem 0;
-      overflow: hidden;
-    }
-
-    .quote-bg {
-      position: absolute;
-      inset: -25%;
-      will-change: transform;
-      /* REPLACE: dramatic kitchen/food image for dark parallax */
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,134,94,0.2) 0%, transparent 55%),
-        linear-gradient(160deg, #0d0805 0%, #1a1008 45%, #221510 100%);
-    }
-
-    .quote-veil {
-      position: absolute;
-      inset: 0;
-      background: rgba(10,6,4,0.72);
-    }
-
-    .quote-inner {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      max-width: 740px;
-      margin: 0 auto;
-    }
-
-    .quote-mark {
-      font-family: var(--f-italic);
-      font-size: 6rem;
-      color: var(--accent);
-      line-height: 0.4;
-      display: block;
-      margin-bottom: 1.5rem;
-      opacity: 0.7;
-    }
-
-    .quote-body {
-      font-family: var(--f-italic);
-      font-size: clamp(1.4rem, 3vw, 2.3rem);
-      font-style: italic;
-      color: var(--text);
-      line-height: 1.52;
-      text-shadow: 0 2px 24px rgba(0,0,0,0.4);
-      margin-bottom: 2.25rem;
-      will-change: transform, opacity;
-    }
-
-    .quote-attr {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.25rem;
-      font-size: 0.6rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.26em;
-      color: var(--text-muted);
-    }
-
-    .quote-attr-line {
-      display: inline-block;
-      width: 36px;
-      height: 1px;
-      background: var(--accent);
-    }
-
-    /* ============================================
-       LOCATIONS
-    ============================================ */
-    #locations { padding: 8rem 0; background: var(--bg); }
-
-    .locations-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-bottom: 4rem;
-    }
-
-    .locations-note {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      line-height: 1.7;
-      max-width: 280px;
-    }
-
-    .locations-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-    }
-
-    .loc-card {
-      background: var(--bg);
-      padding: 2.75rem 2rem;
-      transition: background 0.28s ease;
-      will-change: opacity, transform;
-    }
-
-    .loc-card:hover { background: var(--bg2); }
-
-    .loc-num {
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-      margin-bottom: 1.75rem;
-    }
-
-    .loc-name {
-      font-family: var(--f-display);
-      font-size: 1.55rem;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--text);
-      margin-bottom: 0.8rem;
-      line-height: 1.15;
-    }
-
-    .loc-address {
-      font-size: 0.8rem;
-      line-height: 1.65;
-      color: var(--text-dim);
-      margin-bottom: 0.5rem;
-    }
-
-    .loc-hours-label {
-      font-size: 0.6rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      margin-bottom: 0.2rem;
-      display: block;
-    }
-
-    .loc-hours {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 2.25rem;
-    }
-
-    .btn-wa {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      border: 1px solid var(--border-s);
-      font-size: 0.62rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-dim);
-      transition: all 0.22s ease;
-    }
-
-    .btn-wa:hover {
-      border-color: #25D366;
-      color: #25D366;
-    }
-
-    .btn-wa svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
-
-    /* ============================================
-       FOOTER
-    ============================================ */
-    footer {
-      background: #0d0907;
-      padding: 4.5rem 0 2rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr;
-      gap: 4rem;
-      margin-bottom: 3.5rem;
-      padding-bottom: 3.5rem;
-      border-bottom: 1px solid rgba(240,234,216,0.06);
-    }
-
-    .footer-logo {
-      font-family: var(--f-display);
-      font-size: 2.2rem;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--text);
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .footer-tagline {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-      max-width: 260px;
-      margin-bottom: 1.75rem;
-    }
-
-    .footer-socials { display: flex; gap: 1.25rem; }
-
-    .footer-socials a {
-      font-size: 0.62rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-
-    .footer-socials a:hover { color: var(--text); }
-
-    .footer-col-title {
-      font-size: 0.6rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      color: var(--text-muted);
-      margin-bottom: 1.4rem;
-      opacity: 0.6;
-    }
-
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-
-    .footer-links a {
-      font-size: 0.84rem;
-      color: rgba(240,234,216,0.38);
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--text); }
-
-    .footer-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-copy {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      opacity: 0.5;
-    }
-
-    .footer-bar-right { display: flex; gap: 1.5rem; }
-
-    .footer-bar-right a {
-      font-size: 0.66rem;
-      color: var(--text-muted);
-      opacity: 0.5;
-      transition: opacity 0.2s;
-    }
-
-    .footer-bar-right a:hover { opacity: 1; }
-
-    /* ============================================
-       WHATSAPP FLOAT
-    ============================================ */
-    .wa-float {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 52px;
-      height: 52px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 500;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.32);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
-    }
-
-    .wa-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 28px rgba(37,211,102,0.46);
-    }
-
-    .wa-float svg { width: 26px; height: 26px; fill: #fff; }
-
-    /* ============================================
-       RESPONSIVE
-    ============================================ */
-    @media (max-width: 1024px) {
-      .locations-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
-      #hero { padding-bottom: 5rem; padding-top: 5rem; }
-      .hero-ring { display: none; }
-      .hero-watermark { font-size: 42vw; right: -5%; bottom: 5%; }
-      .hero-title { font-size: 17vw; }
-      .hero-scroll { display: none; }
-      .story-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .story-image-wrap { display: none; }
-      .values-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .menu-head { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      max-width: 1260px; margin: 0 auto; padding: 0 2.5rem;
+      display: grid; grid-template-columns: 5fr 4fr; gap: 5rem; align-items: center;
+    }
+
+    .story-visual { position: relative; }
+    .story-img-main { width: 100%; aspect-ratio: 4/5; overflow: hidden; }
+    .story-img-main img { width: 100%; height: 100%; object-fit: cover; }
+
+    .story-img-float {
+      position: absolute; width: 52%; aspect-ratio: 3/4;
+      bottom: -3rem; right: -3rem; overflow: hidden;
+      border: 4px solid var(--bg); box-shadow: 0 12px 40px rgba(0,0,0,.5);
+    }
+
+    .story-img-float img { width: 100%; height: 100%; object-fit: cover; }
+
+    .story-since {
+      position: absolute; top: -1.5rem; left: -1.5rem;
+      width: 80px; height: 80px; background: var(--rust); border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 2;
+    }
+
+    .story-since-text { font-size: 0.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(20,16,13,.6); line-height: 1; }
+    .story-since-year { font-family: var(--f-serif); font-size: 1.1rem; font-weight: 700; color: var(--bg); line-height: 1.1; }
+
+    .story-text-col { padding-top: 2rem; }
+
+    .section-label {
+      font-size: 0.58rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.28em; color: var(--rust); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: .75rem;
+    }
+
+    .section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--rust); }
+
+    .story-heading { font-family: var(--f-serif); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .story-heading em { font-style: italic; color: var(--rust); }
+
+    .story-body { font-size: 0.95rem; font-weight: 300; line-height: 1.75; color: var(--ink-dim); margin-bottom: 1.5rem; }
+
+    .story-pull { font-family: var(--f-italic); font-size: 1.3rem; font-style: italic; font-weight: 400; color: var(--ink); line-height: 1.5; padding-left: 1.5rem; border-left: 2px solid var(--rust); margin: 2rem 0; }
+
+    .story-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
+    .stat-num { font-family: var(--f-serif); font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: .25rem; }
+    .stat-label { font-size: 0.62rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-muted); }
+
+    @media (max-width: 900px) { .story-grid { grid-template-columns: 1fr; gap: 3rem; } .story-img-float { right: -1rem; bottom: -2rem; } }
+
+    #values { background: var(--bg2); padding: 7rem 0; position: relative; overflow: hidden; }
+    .values-bg-text { position: absolute; bottom: -4rem; right: -2rem; font-family: var(--f-serif); font-size: clamp(8rem, 18vw, 18rem); font-style: italic; font-weight: 900; color: rgba(240,232,216,.025); line-height: 1; pointer-events: none; white-space: nowrap; }
+    .values-inner { max-width: 1260px; margin: 0 auto; padding: 0 2.5rem; }
+    .values-header { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 4.5rem; align-items: end; }
+    .values-heading { font-family: var(--f-serif); font-size: clamp(2.5rem, 4vw, 3.8rem); font-weight: 400; font-style: italic; color: var(--ink); line-height: 1.1; letter-spacing: -0.025em; }
+    .values-intro { font-size: .9rem; font-weight: 300; line-height: 1.7; color: var(--ink-dim); padding-top: 1rem; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); }
+    .value-card { background: var(--bg2); padding: 2.5rem; position: relative; overflow: hidden; transition: background .3s ease; }
+    .value-card:hover { background: var(--bg3); }
+    .value-num { font-family: var(--f-serif); font-size: 3rem; font-weight: 700; color: var(--rule-s); line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem; }
+    .value-icon { width: 36px; height: 36px; border: 1px solid var(--rule-s); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1rem; }
+    .value-title { font-family: var(--f-serif); font-size: 1.35rem; font-weight: 400; font-style: italic; color: var(--ink); margin-bottom: 1rem; }
+    .value-desc { font-size: .85rem; font-weight: 300; line-height: 1.7; color: var(--ink-dim); }
+
+    @media (max-width: 900px) { .values-header { grid-template-columns: 1fr; } .values-grid { grid-template-columns: 1fr; } }
+
+    #menu { padding: 0; background: var(--bg); }
+
+    .menu-header { max-width: 1260px; margin: 0 auto; padding: 7rem 2.5rem 4rem; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 2rem; }
+    .menu-heading { font-family: var(--f-serif); font-size: clamp(3rem, 5vw, 5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.03em; }
+    .menu-heading em { font-style: italic; color: var(--rust); }
+    .menu-link-full { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--rust); border-bottom: 1px solid var(--rust); padding-bottom: .15rem; transition: opacity .2s; white-space: nowrap; }
+    .menu-link-full:hover { opacity: .65; }
+
+    .menu-tabs { max-width: 1260px; margin: 0 auto; padding: 0 2.5rem 3rem; display: flex; gap: 0; border-bottom: 1px solid var(--rule); }
+    .menu-tab-btn { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-muted); padding: .6rem 1.4rem; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .2s ease; white-space: nowrap; }
+    .menu-tab-btn.active { color: var(--ink); border-color: var(--rust); }
+    .menu-tab-btn:hover:not(.active) { color: var(--ink-dim); }
+
+    .menu-panel { display: none; opacity: 0; }
+    .menu-panel.active { display: grid; }
+
+    .menu-layout-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 640px; }
+    .menu-photo-col { position: relative; overflow: hidden; }
+    .menu-photo-col img { width: 100%; height: 100%; object-fit: cover; }
+    .menu-photo-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(20,16,13,.75)); }
+    .menu-photo-caption-text { font-family: var(--f-italic); font-size: 1.1rem; font-style: italic; color: rgba(240,232,216,.8); line-height: 1.4; }
+    .menu-items-col { padding: 3rem; overflow-y: auto; background: var(--bg); }
+    .menu-items-col::-webkit-scrollbar { display: none; }
+    .menu-category-title { font-family: var(--f-serif); font-size: 1.6rem; font-style: italic; font-weight: 400; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--rule); }
+    .menu-item { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+    .menu-item:last-child { border-bottom: none; }
+    .menu-item-name { font-size: .9rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
+    .menu-item-desc { font-size: 0.78rem; font-weight: 300; color: var(--ink-muted); line-height: 1.5; margin-top: .2rem; }
+    .menu-item-price { font-family: var(--f-serif); font-size: 1rem; font-weight: 400; color: var(--rust); white-space: nowrap; flex-shrink: 0; }
+    .menu-item-tag { display: inline-block; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: .15rem .45rem; border-radius: 2px; margin-left: .4rem; vertical-align: middle; }
+    .tag-popular { background: rgba(212,134,94,.15); color: var(--rust); }
+    .tag-new { background: rgba(122,184,125,.15); color: var(--sage); }
+    .tag-vegan { background: rgba(122,184,125,.15); color: var(--sage); }
+
+    .menu-layout-burger { display: grid; grid-template-rows: auto auto; }
+    .menu-burger-hero { position: relative; height: 380px; overflow: hidden; }
+    .menu-burger-hero img { width: 100%; height: 100%; object-fit: cover; }
+    .menu-burger-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(20,16,13,.8)); display: flex; align-items: flex-end; padding: 2.5rem; }
+    .menu-burger-hero-text { font-family: var(--f-serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 700; font-style: italic; color: var(--ink); line-height: 1; letter-spacing: -0.025em; }
+    .menu-burger-grid { max-width: 1260px; margin: 0 auto; padding: 3rem 2.5rem 5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .burger-card { border: 1px solid var(--rule); padding: 2rem; transition: border-color .2s, background .2s; }
+    .burger-card:hover { border-color: var(--rust); background: var(--bg2); }
+    .burger-card-name { font-family: var(--f-serif); font-size: 1.2rem; font-weight: 400; font-style: italic; margin-bottom: .5rem; }
+    .burger-card-desc { font-size: .8rem; font-weight: 300; color: var(--ink-muted); line-height: 1.55; margin-bottom: 1.25rem; }
+    .burger-card-footer { display: flex; align-items: center; justify-content: space-between; }
+    .burger-card-price { font-family: var(--f-serif); font-size: 1.1rem; color: var(--rust); }
+
+    @media (max-width: 900px) {
+      .menu-layout-split { grid-template-columns: 1fr; }
+      .menu-photo-col { height: 300px; }
+      .menu-items-col { padding: 2rem 1.5rem; }
+      .menu-burger-grid { grid-template-columns: 1fr; }
       .menu-tabs { overflow-x: auto; }
-      .menu-grid { grid-template-columns: 1fr; }
-      .photo-grid { grid-template-columns: repeat(2, 1fr); }
-      .specials-grid { grid-template-columns: 1fr; }
-      .locations-grid { grid-template-columns: 1fr; }
-      .locations-head { flex-direction: column; align-items: flex-start; }
-      .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .footer-bar { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-      #story, #values, #menu, #specials, #locations { padding: 5rem 0; }
-      #quote { padding: 7rem 0; }
-      .container { padding: 0 1.25rem; }
+      .menu-tabs::-webkit-scrollbar { display: none; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .marquee-track    { animation: none; }
-      .hero-scroll-line { animation: none; }
-      .photo-cell-inner { transition: none; }
-      .values-card      { transition: none; }
-    }
+    #gallery { padding: 6rem 0; background: var(--bg3); }
+    .gallery-header { max-width: 1260px; margin: 0 auto; padding: 0 2.5rem 3rem; display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+    .gallery-heading { font-family: var(--f-serif); font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 400; font-style: italic; letter-spacing: -0.02em; line-height: 1.1; }
+    .gallery-insta { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ink-dim); border-bottom: 1px solid var(--rule-s); padding-bottom: .15rem; white-space: nowrap; }
+    .gallery-grid { max-width: 1260px; margin: 0 auto; padding: 0 2.5rem; display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; gap: 0.75rem; }
+    .g-item { overflow: hidden; position: relative; }
+    .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .65s ease; }
+    .g-item:hover img { transform: scale(1.04); }
+    .g-tall { grid-row: span 2; min-height: 560px; }
+    .g-sq { aspect-ratio: 1/1; }
+    .g-wide { aspect-ratio: 4/3; }
+
+    @media (max-width: 768px) { .gallery-grid { grid-template-columns: 1fr 1fr; } .g-tall { grid-row: span 1; min-height: 240px; } }
+
+    #specials { padding: 6rem 0; background: var(--bg2); }
+    .specials-inner { max-width: 1260px; margin: 0 auto; padding: 0 2.5rem; }
+    .specials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3.5rem; }
+    .special-card { display: grid; grid-template-columns: auto 1fr; background: var(--bg3); overflow: hidden; }
+    .special-day-col { background: var(--rust); padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem; min-width: 90px; }
+    .special-day { font-family: var(--f-serif); font-size: 2.5rem; font-weight: 700; font-style: italic; color: var(--bg); line-height: 1; }
+    .special-day-label { font-size: 0.5rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(20,16,13,.55); }
+    .special-content { padding: 2rem; }
+    .special-title { font-family: var(--f-serif); font-size: 1.35rem; font-style: italic; font-weight: 400; margin-bottom: .5rem; }
+    .special-desc { font-size: .82rem; font-weight: 300; color: var(--ink-dim); line-height: 1.65; margin-bottom: 1.5rem; }
+    .special-cta { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--rust); display: inline-flex; align-items: center; gap: .4rem; transition: gap .2s; }
+    .special-cta:hover { gap: .7rem; }
+
+    @media (max-width: 768px) { .specials-grid { grid-template-columns: 1fr; } }
+
+    #quote-section { position: relative; height: 70vh; min-height: 480px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .quote-bg { position: absolute; inset: -20%; z-index: 0; }
+    .quote-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .quote-overlay { position: absolute; inset: 0; background: rgba(20,16,13,.75); z-index: 1; }
+    .quote-inner { position: relative; z-index: 2; max-width: 780px; padding: 2rem; text-align: center; }
+    .quote-mark { font-family: var(--f-serif); font-size: 6rem; font-style: italic; color: var(--rust); line-height: .6; margin-bottom: 1.5rem; display: block; }
+    .quote-text { font-family: var(--f-italic); font-size: clamp(1.5rem, 3vw, 2.5rem); font-style: italic; font-weight: 400; color: var(--ink); line-height: 1.45; letter-spacing: -0.01em; }
+    .quote-attr { font-size: 0.62rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.22em; color: var(--ink-muted); margin-top: 1.8rem; }
+
+    #locations { padding: 7rem 0; background: var(--bg); }
+    .locations-inner { max-width: 1260px; margin: 0 auto; padding: 0 2.5rem; }
+    .locations-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 4.5rem; align-items: end; }
+    .locations-heading { font-family: var(--f-serif); font-size: clamp(2.5rem, 4vw, 3.8rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.025em; }
+    .locations-heading em { font-style: italic; }
+    .locations-intro { font-size: .9rem; font-weight: 300; line-height: 1.7; color: var(--ink-dim); }
+    .locations-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .location-card { position: relative; overflow: hidden; aspect-ratio: 3/4; cursor: pointer; }
+    .location-bg { position: absolute; inset: 0; z-index: 0; transition: transform .55s ease; }
+    .location-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .location-card:hover .location-bg { transform: scale(1.06); }
+    .location-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,16,13,.92) 0%, rgba(20,16,13,.15) 60%); z-index: 1; }
+    .location-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; z-index: 2; }
+    .location-num { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: .5rem; }
+    .location-name { font-family: var(--f-serif); font-size: 1.4rem; font-weight: 400; font-style: italic; color: var(--ink); margin-bottom: .35rem; }
+    .location-area { font-size: .75rem; font-weight: 300; color: var(--ink-dim); margin-bottom: 1.25rem; }
+    .location-wa { display: inline-flex; align-items: center; gap: .5rem; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink); padding: .55rem 1.1rem; border: 1px solid var(--rule-s); transition: all .22s ease; }
+    .location-wa:hover { background: var(--rust); border-color: var(--rust); color: var(--bg); }
+
+    @media (max-width: 1000px) { .locations-grid { grid-template-columns: repeat(2, 1fr); } .locations-header { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .locations-grid { grid-template-columns: 1fr; } }
+
+    #footer { background: var(--bg2); padding: 5rem 0 0; }
+    .footer-inner { max-width: 1260px; margin: 0 auto; padding: 0 2.5rem 4rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; }
+    .footer-brand-name { font-family: var(--f-serif); font-size: 2.5rem; font-weight: 400; font-style: italic; color: var(--ink); letter-spacing: -0.025em; margin-bottom: 1rem; }
+    .footer-tagline { font-size: .85rem; font-weight: 300; color: var(--ink-dim); line-height: 1.65; max-width: 30ch; margin-bottom: 2rem; }
+    .footer-social { display: flex; gap: 1rem; }
+    .footer-social-link { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-muted); padding-bottom: 1px; border-bottom: 1px solid var(--rule); transition: color .2s, border-color .2s; }
+    .footer-social-link:hover { color: var(--ink); border-color: var(--rule-s); }
+    .footer-col-title { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--ink-muted); margin-bottom: 1.5rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: .85rem; }
+    .footer-links a { font-size: .85rem; font-weight: 300; color: var(--ink-dim); transition: color .2s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-bar { border-top: 1px solid var(--rule); padding: 1.5rem 2.5rem; max-width: 1260px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .footer-legal { font-size: 0.62rem; color: var(--ink-muted); }
+    .footer-credit { font-size: 0.62rem; color: var(--ink-muted); }
+
+    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; } .footer-bar { flex-direction: column; text-align: center; } }
+
+    .wa-float { position: fixed; bottom: 2rem; right: 2rem; width: 52px; height: 52px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 500; box-shadow: 0 4px 20px rgba(37,211,102,.3); transition: transform .22s ease, box-shadow .22s ease; }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.45); }
+    .wa-float svg { width: 26px; height: 26px; }
+
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } body::after { display: none; } }
   </style>
 </head>
 <body>
 
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
 
-  <!-- LOADER -->
-  <div id="loader" aria-hidden="true">
-    <div class="loader-brand">
-      <span class="loader-letter">N</span><span class="loader-letter">ü</span><span class="loader-letter">d</span><span class="loader-letter">e</span><span class="loader-letter">.</span>
-    </div>
-    <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
-    <div class="loader-sub" id="loaderSub">Born in Bali · Est. 2016</div>
+<div id="loader" role="status" aria-label="Loading">
+  <div class="loader-brand">
+    <span class="loader-letter">N</span><span class="loader-letter">ü</span><span class="loader-letter">d</span><span class="loader-letter">e</span>
   </div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  <div class="loader-tag">Bali's Original Café</div>
+</div>
 
-  <!-- NAV -->
-  <nav id="nav" role="navigation" aria-label="Primary">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="#" class="nav-logo">Nüde.</a>
-        <ul class="nav-links">
-          <li><a href="#story">Story</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#specials">Specials</a></li>
-          <li><a href="#locations">Locations</a></li>
-        </ul>
-        <a href="#locations" class="nav-cta">Reserve</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <div class="nav-overlay" id="navOverlay" role="dialog" aria-label="Site navigation" aria-hidden="true">
-    <a href="#story"     class="overlay-link">Story</a>
-    <a href="#menu"      class="overlay-link">Menu</a>
-    <a href="#specials"  class="overlay-link">Specials</a>
-    <a href="#locations" class="overlay-link">Locations</a>
-    <div class="overlay-divider" aria-hidden="true"></div>
-    <a href="#locations" class="overlay-cta">Reserve a Table</a>
+<nav id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Nüde</a>
+    <ul class="nav-links">
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#locations">Locations</a></li>
+    </ul>
+    <a href="#locations" class="nav-cta">Reserve</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-ring" aria-hidden="true"></div>
-    <span class="hero-watermark" aria-hidden="true">ü</span>
-    <div class="container">
-      <div class="hero-content">
-        <p class="hero-eyebrow">Est. 2016 &nbsp;·&nbsp; Bali, Indonesia</p>
-        <div class="hero-title-wrap">
-          <span class="hero-title">Nüde.</span>
-        </div>
-        <p class="hero-sub">Real people, honest food, good coffee. Bali's original neighbourhood café — a place that genuinely feels like home.</p>
-        <div class="hero-ctas">
-          <a href="#menu"  class="btn btn-primary">View the Menu</a>
-          <a href="#story" class="btn btn-ghost">Our Story</a>
-        </div>
-      </div>
+<div class="nav-overlay" id="nav-overlay" role="dialog" aria-label="Navigation menu">
+  <span class="overlay-close" id="overlay-close" aria-label="Close menu">&times;</span>
+  <a href="#story"     onclick="closeMenu()">Our Story</a>
+  <a href="#menu"      onclick="closeMenu()">Menu</a>
+  <a href="#gallery"   onclick="closeMenu()">Gallery</a>
+  <a href="#locations" onclick="closeMenu()">Locations</a>
+</div>
+
+<section id="hero" aria-label="Hero">
+  <div class="hero-left">
+    <div class="hero-tag">Est. 2016 · Bali, Indonesia</div>
+    <h1 class="hero-title">Real People.<br><em>Honest</em> Food.<br>All Nüde.</h1>
+    <p class="hero-body">Born from a simple belief: good food doesn't need to hide behind anything. Four locations across Bali — neighbourhood cafés for the people who actually live here.</p>
+    <div class="hero-ctas">
+      <a href="#menu" class="btn btn-filled">View the Menu</a>
+      <a href="#story" class="btn btn-ghost">Our Story</a>
     </div>
-    <div class="hero-scroll" aria-hidden="true">
-      <span class="hero-scroll-label">Scroll</span>
+    <div class="hero-scroll-hint">
       <div class="hero-scroll-line"></div>
+      Scroll to explore
     </div>
-  </section>
+  </div>
+  <div class="hero-right">
+    <img src="images/hero.jpg" alt="Nüde Café interior — warm and welcoming" loading="eager" fetchpriority="high">
+    <div class="hero-right-overlay"></div>
+    <div class="hero-year">Est. 2016</div>
+  </div>
+</section>
 
-  <!-- MARQUEE -->
-  <div id="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="marquee-group">
-        <div class="marquee-item"><span class="marquee-text">Real People</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Honest Food</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">All Nüde</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Born in Bali</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Est. 2016</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Four Locations</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">All Day Brunch</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Community First</span><span class="marquee-dot"></span></div>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item"><span>All-Day Brunch</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Bali's Best Burgers</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Honest Bowls</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Good Coffee</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Berawa · Umalas · Babakan · Pererenan</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Open Every Day 07:00 – 22:00</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Neighbourhood Café Since 2016</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>All-Day Brunch</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Bali's Best Burgers</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Honest Bowls</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Good Coffee</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Berawa · Umalas · Babakan · Pererenan</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Open Every Day 07:00 – 22:00</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Neighbourhood Café Since 2016</span><div class="marquee-dot"></div></div>
+  </div>
+</div>
+
+<section id="story" aria-labelledby="story-heading">
+  <div class="story-grid">
+    <div class="story-visual" id="story-visual">
+      <div class="story-img-main">
+        <img src="images/story.jpg" alt="Nüde Café — neighbourhood community" loading="lazy">
       </div>
-      <div class="marquee-group" aria-hidden="true">
-        <div class="marquee-item"><span class="marquee-text">Real People</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Honest Food</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">All Nüde</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Born in Bali</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Est. 2016</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Four Locations</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">All Day Brunch</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Community First</span><span class="marquee-dot"></span></div>
+      <div class="story-img-float">
+        <img src="images/interior-3.jpg" alt="Nüde Café interior" loading="lazy">
       </div>
-      <div class="marquee-group" aria-hidden="true">
-        <div class="marquee-item"><span class="marquee-text">Real People</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Honest Food</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">All Nüde</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Born in Bali</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Est. 2016</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Four Locations</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">All Day Brunch</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Community First</span><span class="marquee-dot"></span></div>
+      <div class="story-since"><div class="story-since-text">Since</div><div class="story-since-year">2016</div></div>
+    </div>
+    <div class="story-text-col" id="story-text">
+      <div class="section-label">Our Story</div>
+      <h2 class="story-heading" id="story-heading">A café that never<br>had anything to <em>hide</em></h2>
+      <p class="story-body">Nüde started with one café in Berawa and a straightforward idea: cook real food for real people, make it honest, and the rest will follow. No gimmicks, no pretense — just quality ingredients, good coffee, and a space where everyone belongs.</p>
+      <blockquote class="story-pull">"We named it Nüde because we had nothing to hide — and we never will."</blockquote>
+      <p class="story-body">Eight years later, four locations across Bali keep that same spirit alive. Families, surfers, digital nomads, locals who've been coming since day one — everyone welcome, always.</p>
+      <div class="story-stats">
+        <div><div class="stat-num">4</div><div class="stat-label">Locations</div></div>
+        <div><div class="stat-num">8+</div><div class="stat-label">Years in Bali</div></div>
+        <div><div class="stat-num">∞</div><div class="stat-label">Good Meals</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="values" aria-labelledby="values-heading">
+  <div class="values-bg-text" aria-hidden="true">Nüde</div>
+  <div class="values-inner">
+    <div class="values-header">
+      <h2 class="values-heading" id="values-heading">Three things we<br><em>never compromise</em></h2>
+      <p class="values-intro">Every decision — from who we source ingredients from to how we design our spaces — comes back to these three things.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num" aria-hidden="true">01</div>
+        <div class="value-icon">☀</div>
+        <h3 class="value-title">Real Ingredients</h3>
+        <p class="value-desc">We source fresh from Bali's best local suppliers. No powders, no shortcuts, no ingredients we can't pronounce.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num" aria-hidden="true">02</div>
+        <div class="value-icon">⌘</div>
+        <h3 class="value-title">Honest Prices</h3>
+        <p class="value-desc">You shouldn't have to pay resort money for good food. We keep our prices fair because we want everyone to eat here.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num" aria-hidden="true">03</div>
+        <div class="value-icon">❋</div>
+        <h3 class="value-title">Open to Everyone</h3>
+        <p class="value-desc">Every Nüde feels like a neighbourhood spot because it is one. The regulars know the staff by name — that's not by accident.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" aria-labelledby="menu-heading">
+  <div class="menu-header">
+    <h2 class="menu-heading" id="menu-heading">What we're<br><em>cooking</em></h2>
+    <a href="https://nude-bali.com/menu" target="_blank" rel="noopener" class="menu-link-full">Full Menu ↗</a>
+  </div>
+
+  <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+    <button class="menu-tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-brunch"  onclick="switchTab('tab-brunch',  this)">All-Day Brunch</button>
+    <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-bowls"   onclick="switchTab('tab-bowls',   this)">Bowls &amp; Salads</button>
+    <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-burgers" onclick="switchTab('tab-burgers', this)">The Burgers</button>
+    <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-drinks"  onclick="switchTab('tab-drinks',  this)">Drinks</button>
+  </div>
+
+  <div id="tab-brunch" class="menu-panel active" role="tabpanel">
+    <div class="menu-layout-split">
+      <div class="menu-photo-col">
+        <img src="images/food-01.jpg" alt="All-day brunch at Nüde" loading="lazy">
+        <div class="menu-photo-caption"><div class="menu-photo-caption-text">"Brunch worth waking up for — every single day."</div></div>
+      </div>
+      <div class="menu-items-col">
+        <div class="menu-category-title">All-Day Brunch</div>
+        <div class="menu-item"><div><div class="menu-item-name">The Nüde Eggs Benny <span class="menu-item-tag tag-popular">Popular</span></div><div class="menu-item-desc">Poached eggs, house hollandaise, avocado, sourdough toast</div></div><div class="menu-item-price">85k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Smashed Avo + Feta</div><div class="menu-item-desc">Smashed avocado, whipped feta, pickled chilli, seeded sourdough</div></div><div class="menu-item-price">78k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Big Nüde Breakfast <span class="menu-item-tag tag-popular">Popular</span></div><div class="menu-item-desc">Eggs your way, bacon, mushrooms, roasted tomato, toast &amp; home fries</div></div><div class="menu-item-price">110k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Shakshuka <span class="menu-item-tag tag-vegan">Vegetarian</span></div><div class="menu-item-desc">Baked eggs in spiced tomato + roasted pepper sauce, crusty bread</div></div><div class="menu-item-price">80k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">French Toast Stack</div><div class="menu-item-desc">Thick brioche, whipped mascarpone, seasonal fruit, maple syrup</div></div><div class="menu-item-price">82k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Granola + Yoghurt Bowl <span class="menu-item-tag tag-vegan">Vegan</span></div><div class="menu-item-desc">House granola, coconut yoghurt, fresh mango, honey, seeds</div></div><div class="menu-item-price">65k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Pancake Stack <span class="menu-item-tag tag-new">New</span></div><div class="menu-item-desc">Fluffy buttermilk pancakes, salted caramel butter, berry compote</div></div><div class="menu-item-price">75k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Smoked Salmon Plate</div><div class="menu-item-desc">House-cured salmon, cream cheese, capers, red onion, rye crispbread</div></div><div class="menu-item-price">95k</div></div>
       </div>
     </div>
   </div>
 
-  <!-- STORY -->
-  <section id="story">
-    <div class="container">
-      <div class="story-grid">
-        <div class="story-image-wrap">
-          <div class="story-img" role="img" aria-label="Nüde Café — dark moody interior portrait"></div>
-          <div class="story-badge" aria-hidden="true">
-            <span class="badge-year">16</span>
-            <span class="badge-est">Est.</span>
-          </div>
+  <div id="tab-bowls" class="menu-panel" role="tabpanel">
+    <div class="menu-layout-split">
+      <div class="menu-photo-col">
+        <img src="images/food-02.jpg" alt="Nüde wholesome bowls" loading="lazy">
+        <div class="menu-photo-caption"><div class="menu-photo-caption-text">"Fuel for surf sessions, jungle walks, and everything in between."</div></div>
+      </div>
+      <div class="menu-items-col">
+        <div class="menu-category-title">Bowls &amp; Salads</div>
+        <div class="menu-item"><div><div class="menu-item-name">Nüde Power Bowl <span class="menu-item-tag tag-popular">Popular</span></div><div class="menu-item-desc">Brown rice, roasted sweet potato, kale, edamame, tahini dressing</div></div><div class="menu-item-price">88k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Açaí Bowl <span class="menu-item-tag tag-vegan">Vegan</span></div><div class="menu-item-desc">Frozen açaí, banana base, house granola, tropical fruits, coconut flakes</div></div><div class="menu-item-price">72k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Grilled Chicken Salad</div><div class="menu-item-desc">Mixed greens, grilled chicken, avocado, cherry tomato, lemon dijon</div></div><div class="menu-item-price">90k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Tuna Poke Bowl <span class="menu-item-tag tag-new">New</span></div><div class="menu-item-desc">Sashimi tuna, sushi rice, cucumber, mango, sesame, ponzu dressing</div></div><div class="menu-item-price">105k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Roasted Veggie Bowl <span class="menu-item-tag tag-vegan">Vegan</span></div><div class="menu-item-desc">Seasonal roasted vegetables, quinoa, hummus, pumpkin seeds, za'atar</div></div><div class="menu-item-price">80k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Green Goddess Salad <span class="menu-item-tag tag-vegan">Vegetarian</span></div><div class="menu-item-desc">Butter lettuce, snap peas, herbs, cucumber, green goddess dressing</div></div><div class="menu-item-price">75k</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-burgers" class="menu-panel" role="tabpanel">
+    <div class="menu-layout-burger">
+      <div class="menu-burger-hero">
+        <img src="images/burger.jpg" alt="Nüde — Bali's best burgers" loading="lazy">
+        <div class="menu-burger-hero-overlay"><div class="menu-burger-hero-text">Bali's Best Burgers.</div></div>
+      </div>
+      <div class="menu-burger-grid">
+        <div class="burger-card"><div class="burger-card-name">The Classic Nüde <span class="menu-item-tag tag-popular">Popular</span></div><div class="burger-card-desc">Double smash patty, American cheese, pickles, special sauce, brioche bun</div><div class="burger-card-footer"><div class="burger-card-price">120k</div></div></div>
+        <div class="burger-card"><div class="burger-card-name">BBQ Bacon Crunch</div><div class="burger-card-desc">Single patty, smoked bacon, crispy onions, BBQ aioli, cheddar, toasted bun</div><div class="burger-card-footer"><div class="burger-card-price">125k</div></div></div>
+        <div class="burger-card"><div class="burger-card-name">The Mushroom Swiss <span class="menu-item-tag tag-vegan">Vegetarian</span></div><div class="burger-card-desc">Portobello mushroom patty, Swiss cheese, caramelised onion, truffle aioli</div><div class="burger-card-footer"><div class="burger-card-price">110k</div></div></div>
+        <div class="burger-card"><div class="burger-card-name">Spicy Chicken Bun</div><div class="burger-card-desc">Crispy fried chicken thigh, gochujang glaze, pickled slaw, ranch, milk bun</div><div class="burger-card-footer"><div class="burger-card-price">115k</div></div></div>
+        <div class="burger-card"><div class="burger-card-name">Surf & Turf Double <span class="menu-item-tag tag-new">New</span></div><div class="burger-card-desc">Beef patty + tiger prawn, lemon butter, jalapeño, garlic aioli, brioche</div><div class="burger-card-footer"><div class="burger-card-price">145k</div></div></div>
+        <div class="burger-card"><div class="burger-card-name">Smash Stack Double</div><div class="burger-card-desc">Two smashed patties, double cheese, caramelised onion, pickles, special sauce</div><div class="burger-card-footer"><div class="burger-card-price">135k</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-drinks" class="menu-panel" role="tabpanel">
+    <div class="menu-layout-split">
+      <div class="menu-photo-col">
+        <img src="images/cocktails.jpg" alt="Nüde — cocktails and drinks" loading="lazy">
+        <div class="menu-photo-caption"><div class="menu-photo-caption-text">"From the first coffee of the morning to the last sip of the evening."</div></div>
+      </div>
+      <div class="menu-items-col">
+        <div class="menu-category-title">Drinks</div>
+        <div class="menu-item"><div><div class="menu-item-name">House Specialty Coffee <span class="menu-item-tag tag-popular">Popular</span></div><div class="menu-item-desc">Ethically sourced single-origin Bali blend, espresso or filter</div></div><div class="menu-item-price">35k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Cold Brew</div><div class="menu-item-desc">12-hour cold extracted, coconut milk or black</div></div><div class="menu-item-price">45k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Nüde Green Juice <span class="menu-item-tag tag-vegan">Vegan</span></div><div class="menu-item-desc">Cucumber, celery, spinach, green apple, ginger, lemon</div></div><div class="menu-item-price">55k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Turmeric Latte</div><div class="menu-item-desc">House turmeric blend, oat milk, black pepper, honey</div></div><div class="menu-item-price">48k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Tropical Smoothie <span class="menu-item-tag tag-vegan">Vegan</span></div><div class="menu-item-desc">Mango, passionfruit, pineapple, coconut water, lime</div></div><div class="menu-item-price">52k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Aperol Spritz <span class="menu-item-tag tag-new">Evening</span></div><div class="menu-item-desc">Aperol, prosecco, soda, fresh orange — from 4pm</div></div><div class="menu-item-price">85k</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">House Cocktails</div><div class="menu-item-desc">Seasonal rotation — ask your server for today's list</div></div><div class="menu-item-price">95k+</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Local Bintang Draft</div><div class="menu-item-desc">Cold and crisp, just like Bali should be</div></div><div class="menu-item-price">55k</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" aria-labelledby="gallery-heading">
+  <div class="gallery-header">
+    <h2 class="gallery-heading" id="gallery-heading">Life at<br><em>Nüde</em></h2>
+    <a href="https://www.instagram.com/nudebali" target="_blank" rel="noopener" class="gallery-insta">@nudebali ↗</a>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-item g-tall"><img src="images/people-1.png" alt="Nüde Café — guests celebrating" loading="lazy"></div>
+    <div class="g-item g-sq"><img src="images/food-03.jpg" alt="Nüde dining" loading="lazy"></div>
+    <div class="g-item g-sq"><img src="images/interior-2.jpg" alt="Nüde interior" loading="lazy"></div>
+    <div class="g-item g-wide"><img src="images/team.jpg" alt="Nüde team" loading="lazy"></div>
+    <div class="g-item g-wide"><img src="images/food-04.jpg" alt="Nüde menu spread" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="specials" aria-labelledby="specials-heading">
+  <div class="specials-inner">
+    <div class="section-label">Weekly Specials</div>
+    <h2 id="specials-heading" style="font-family:var(--f-serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:400;letter-spacing:-0.02em;margin-bottom:.5rem;">
+      Mid-week reasons<br>to <em style="font-style:italic;color:var(--rust);">show up</em>
+    </h2>
+    <div class="specials-grid">
+      <div class="special-card">
+        <div class="special-day-col"><div class="special-day">Wed</div><div class="special-day-label">Every Week</div></div>
+        <div class="special-content">
+          <div class="special-title">Wednesday Nüde</div>
+          <p class="special-desc">30% off all bowls and salads. No code, no catch — just show up on Wednesday. Valid all day, all locations.</p>
+          <a href="https://wa.me/62000000000" target="_blank" rel="noopener" class="special-cta">Claim Your Table →</a>
         </div>
-        <div class="story-text">
-          <p class="section-label">Our Story</p>
-          <h2 class="section-title">Born from the belief that food should be honest.</h2>
-          <p class="story-body">We opened our doors in Berawa back in 2016 with one simple idea: create a space where people feel genuinely at home. No pretence, no theatre — just good food, good coffee, and the kind of warmth that makes you want to linger.</p>
-          <p class="story-body">What started as an intimate spot for friends grew into something we never could have planned — a real community. Locals, expats, nomads, travellers. All finding the same thing at the same table: a place that feels real in a world that often doesn't.</p>
-          <p class="story-body">Today we have four homes across Bali. The menu has evolved, the team has grown, and the spaces have changed — but the spirit has never wavered. We are, and always will be, nüde.</p>
-          <div class="story-sig">
-            The Nüde Team
-            <small>Berawa · Umalas · Babakan · Pererenan</small>
-          </div>
+      </div>
+      <div class="special-card">
+        <div class="special-day-col"><div class="special-day">Fri</div><div class="special-day-label">Every Week</div></div>
+        <div class="special-content">
+          <div class="special-title">Friday Burger Night</div>
+          <p class="special-desc">Buy any burger, get free home fries and a cold Bintang. Friday from 5pm. The weekend starts here.</p>
+          <a href="https://wa.me/62000000000" target="_blank" rel="noopener" class="special-cta">Claim Your Table →</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- VALUES -->
-  <section id="values">
-    <div class="container">
-      <div class="values-head">
-        <p class="section-label">What we stand for</p>
-        <h2 class="section-title">Three things we refuse to compromise on.</h2>
+<section id="quote-section" aria-label="Brand quote">
+  <div class="quote-bg" id="quoteBg">
+    <img src="images/interior-4.jpg" alt="" role="presentation" loading="lazy">
+  </div>
+  <div class="quote-overlay"></div>
+  <div class="quote-inner" id="quoteInner">
+    <span class="quote-mark" aria-hidden="true">"</span>
+    <blockquote class="quote-text">We named it Nüde because we had nothing to hide. The food, the space, the people — it's all exactly what it appears to be.</blockquote>
+    <div class="quote-attr">— Nüde Founders · Bali, 2016</div>
+  </div>
+</section>
+
+<section id="locations" aria-labelledby="locations-heading">
+  <div class="locations-inner">
+    <div class="locations-header">
+      <h2 class="locations-heading" id="locations-heading">Find us across<br><em>Bali</em></h2>
+      <p class="locations-intro">Four neighbourhoods, one spirit. Whether you're a regular at Berawa or stumbling in from the beach in Pererenan — there's a Nüde waiting for you.</p>
+    </div>
+    <div class="locations-grid">
+      <div class="location-card">
+        <div class="location-bg"><img src="images/interior-2.jpg" alt="Nüde Berawa" loading="lazy"></div>
+        <div class="location-overlay"></div>
+        <div class="location-content">
+          <div class="location-num">01 / Berawa</div>
+          <div class="location-name">Berawa</div>
+          <div class="location-area">Jl. Pantai Berawa, Canggu</div>
+          <a href="https://wa.me/62000000000" target="_blank" rel="noopener" class="location-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve</a>
+        </div>
       </div>
-      <div class="values-grid">
-        <div class="values-card">
-          <div class="values-num">01</div>
-          <svg class="values-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
-            <path d="M18 7C11.4 7 6 12.4 6 19s5.4 12 12 12 12-5.4 12-12S24.6 7 18 7z"/>
-            <path d="M12 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
-            <circle cx="18" cy="19" r="2.2"/>
-          </svg>
-          <h3 class="values-name">Honest Food</h3>
-          <p class="values-desc">Every dish is prepared with care and served without compromise. Real ingredients, real flavour. Nothing hidden — nothing performed.</p>
+      <div class="location-card">
+        <div class="location-bg"><img src="images/interior-3.jpg" alt="Nüde Umalas" loading="lazy"></div>
+        <div class="location-overlay"></div>
+        <div class="location-content">
+          <div class="location-num">02 / Umalas</div>
+          <div class="location-name">Umalas</div>
+          <div class="location-area">Jl. Umalas II, Kerobokan</div>
+          <a href="https://wa.me/62000000000" target="_blank" rel="noopener" class="location-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve</a>
         </div>
-        <div class="values-card">
-          <div class="values-num">02</div>
-          <svg class="values-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
-            <circle cx="14" cy="13" r="4.5"/>
-            <circle cx="24" cy="16.5" r="3.5"/>
-            <path d="M4 32c0-5.5 4.5-10 10-10h3c5.5 0 10 4.5 10 10"/>
-          </svg>
-          <h3 class="values-name">Real Community</h3>
-          <p class="values-desc">We are nothing without the people who walk through our doors. Locals and visitors alike — everyone belongs at the nüde table.</p>
+      </div>
+      <div class="location-card">
+        <div class="location-bg"><img src="images/story.jpg" alt="Nüde Babakan" loading="lazy"></div>
+        <div class="location-overlay"></div>
+        <div class="location-content">
+          <div class="location-num">03 / Babakan</div>
+          <div class="location-name">Babakan</div>
+          <div class="location-area">Jl. Raya Babakan, Canggu</div>
+          <a href="https://wa.me/62000000000" target="_blank" rel="noopener" class="location-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve</a>
         </div>
-        <div class="values-card">
-          <div class="values-num">03</div>
-          <svg class="values-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
-            <path d="M18 5C15 9 9 13 9 21c0 5 4 9 9 9s9-4 9-9C27 13 21 9 18 5z"/>
-            <path d="M14 24c0-2.2 1.8-4 4-4s4 1.8 4 4"/>
-          </svg>
-          <h3 class="values-name">Bali Born</h3>
-          <p class="values-desc">Rooted in the warmth and spirit of Bali. Our island shapes how we cook, how we host, and how we see the world around us.</p>
+      </div>
+      <div class="location-card">
+        <div class="location-bg"><img src="images/beach.jpg" alt="Nüde Pererenan" loading="lazy"></div>
+        <div class="location-overlay"></div>
+        <div class="location-content">
+          <div class="location-num">04 / Pererenan</div>
+          <div class="location-name">Pererenan</div>
+          <div class="location-area">Jl. Pererenan, Mengwi</div>
+          <a href="https://wa.me/62000000000" target="_blank" rel="noopener" class="location-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- MENU -->
-  <section id="menu">
-    <div class="container">
-      <div class="menu-head">
-        <div>
-          <p class="section-label">The Menu</p>
-          <h2 class="section-title">Something honest for every hour.</h2>
-        </div>
-        <div class="menu-tabs" role="tablist">
-          <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-brunch"  id="btn-brunch"  onclick="switchTab('tab-brunch',this)">Brunch</button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-burgers" id="btn-burgers" onclick="switchTab('tab-burgers',this)">Burgers</button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-bowls"   id="btn-bowls"   onclick="switchTab('tab-bowls',this)">Bowls</button>
-        </div>
-      </div>
-
-      <div id="tab-brunch" class="tab-panel active" role="tabpanel">
-        <div class="menu-grid">
-          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Açaí Power Bowl</div><div class="menu-desc">Wild açaí, seasonal fruit, toasted granola, honey, coconut flakes</div><div class="menu-price">IDR 85k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Smashed Avo Toast</div><div class="menu-desc">Sourdough, avocado, poached eggs, dukkah, chilli flakes</div><div class="menu-price">IDR 78k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Eggs Benny — Nüde Style</div><div class="menu-desc">English muffin, smoked salmon, poached eggs, house hollandaise</div><div class="menu-price">IDR 95k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Full Nüde Breakfast</div><div class="menu-desc">Eggs your way, bacon, sausage, grilled tomato, sourdough toast</div><div class="menu-price">IDR 115k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Tropical Smoothie Bowl</div><div class="menu-desc">Mango, pineapple, banana base, kiwi, chia seeds, coconut yoghurt</div><div class="menu-price">IDR 72k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb brunch"></div><div><div class="menu-name">Bali Breakfast Wrap</div><div class="menu-desc">Scrambled eggs, roasted veg, cheddar, avocado, sriracha, tortilla</div><div class="menu-price">IDR 82k</div></div></div>
-        </div>
-      </div>
-
-      <div id="tab-burgers" class="tab-panel" role="tabpanel">
-        <div class="menu-grid">
-          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">The Classic Nüde</div><div class="menu-desc">180g beef patty, house sauce, iceberg, tomato, pickles, cheddar, brioche</div><div class="menu-price">IDR 115k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">Double Stack</div><div class="menu-desc">Two smash patties, American cheese, house sauce, pickles, onion, sesame bun</div><div class="menu-price">IDR 145k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">Crispy Chicken</div><div class="menu-desc">Buttermilk fried chicken, house slaw, pickled jalapeños, honey mustard</div><div class="menu-price">IDR 108k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">Mushroom Melt</div><div class="menu-desc">Portobello, caramelised onion, goat cheese, rocket, sourdough bun</div><div class="menu-price">IDR 105k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">Fish &amp; Chips Burger</div><div class="menu-desc">Beer-battered snapper, tartare, iceberg, lemon, thick-cut fries</div><div class="menu-price">IDR 118k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb burger"></div><div><div class="menu-name">The Green One</div><div class="menu-desc">House veggie patty, hummus, roasted capsicum, cucumber, herb mayo</div><div class="menu-price">IDR 98k</div></div></div>
-        </div>
-      </div>
-
-      <div id="tab-bowls" class="tab-panel" role="tabpanel">
-        <div class="menu-grid">
-          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">Classic Poke Bowl</div><div class="menu-desc">Sashimi-grade tuna, sushi rice, edamame, cucumber, pickled ginger, sesame</div><div class="menu-price">IDR 125k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">The Grain Bowl</div><div class="menu-desc">Quinoa, roasted sweet potato, kale, tahini dressing, pumpkin seeds, lemon</div><div class="menu-price">IDR 105k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">Buddha Bowl</div><div class="menu-desc">Brown rice, chickpeas, avocado, cherry tomato, beets, miso ginger dressing</div><div class="menu-price">IDR 98k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">Protein Bowl</div><div class="menu-desc">Grilled chicken, brown rice, broccoli, soft egg, edamame, teriyaki glaze</div><div class="menu-price">IDR 118k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">Salmon Noodle Bowl</div><div class="menu-desc">Soba noodles, teriyaki salmon, bok choy, sesame oil, spring onion, nori</div><div class="menu-price">IDR 132k</div></div></div>
-          <div class="menu-card"><div class="menu-thumb bowl"></div><div><div class="menu-name">Vegan Power Bowl</div><div class="menu-desc">Falafel, roasted cauliflower, tabbouleh, [vegan] tzatziki, pomegranate</div><div class="menu-price">IDR 108k</div></div></div>
-        </div>
-      </div>
-
-      <div class="menu-footer">
-        <a href="https://nude-bali.com/menu" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Full Menu ↗</a>
+<footer id="footer" aria-label="Footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">Nüde</div>
+      <p class="footer-tagline">Real People, Honest Food, All Nüde. Bali's original neighbourhood café since 2016.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/nudebali" target="_blank" rel="noopener" class="footer-social-link">Instagram</a>
+        <a href="https://nude-bali.com" target="_blank" rel="noopener" class="footer-social-link">Website</a>
       </div>
     </div>
-  </section>
-
-  <!-- PHOTOS -->
-  <section id="photos" aria-label="Gallery">
-    <div class="photo-grid">
-      <div class="photo-cell"><div class="photo-cell-inner" role="img" aria-label="Nüde Café dark interior — candlelit atmosphere"></div></div>
-      <div class="photo-cell"><div class="photo-cell-inner" role="img" aria-label="Moody food close-up — fresh brunch plate"></div></div>
-      <div class="photo-cell"><div class="photo-cell-inner" role="img" aria-label="The classic Nüde burger — dark background"></div></div>
-      <div class="photo-cell"><div class="photo-cell-inner" role="img" aria-label="Evening community moment at Nüde Café"></div></div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#specials">Specials</a></li>
+        <li><a href="#locations">Locations</a></li>
+      </ul>
     </div>
-  </section>
-
-  <!-- SPECIALS -->
-  <section id="specials">
-    <div class="container">
-      <div class="specials-head">
-        <p class="section-label">Weekly Specials</p>
-        <h2 class="section-title">Because every week deserves something to look forward to.</h2>
-      </div>
-      <div class="specials-grid">
-        <div class="special-card special-card-dark">
-          <div class="special-day">Every Wednesday</div>
-          <h3 class="special-title">Burger Wednesday</h3>
-          <p class="special-desc">Two burgers are better than one. Join us every Wednesday from 3 PM and get two of your favourite Nüde burgers for the price of one.</p>
-          <p class="special-time">From 3:00 PM · All Branches</p>
-          <a href="https://wa.me/62000000000" target="_blank" rel="noopener noreferrer" class="btn-spl-dark">Claim Your Table →</a>
-          <span class="special-watermark" aria-hidden="true">2×1</span>
-        </div>
-        <div class="special-card special-card-light">
-          <div class="special-day">Every Friday</div>
-          <h3 class="special-title">Feel Good Friday</h3>
-          <p class="special-desc">End your week the right way. Fifty percent off dinner [including burgers], plus cocktails for just 50k. You deserve it.</p>
-          <p class="special-time">From 6:00 PM · All Branches</p>
-          <a href="https://wa.me/62000000000" target="_blank" rel="noopener noreferrer" class="btn-spl-light">Claim Your Table →</a>
-          <span class="special-watermark" aria-hidden="true">50%</span>
-        </div>
-      </div>
+    <div>
+      <div class="footer-col-title">Visit Us</div>
+      <ul class="footer-links" style="gap:.5rem">
+        <li style="color:var(--ink-dim);font-size:.8rem;font-weight:300;">Berawa · Canggu</li>
+        <li style="color:var(--ink-dim);font-size:.8rem;font-weight:300;">Umalas · Kerobokan</li>
+        <li style="color:var(--ink-dim);font-size:.8rem;font-weight:300;">Babakan · Canggu</li>
+        <li style="color:var(--ink-dim);font-size:.8rem;font-weight:300;">Pererenan · Mengwi</li>
+        <li style="margin-top:.75rem"><a href="mailto:hello@nude-bali.com">hello@nude-bali.com</a></li>
+      </ul>
     </div>
-  </section>
+  </div>
+  <div class="footer-bar">
+    <div class="footer-legal">&copy; 2024 Nüde Café Bali. All rights reserved.</div>
+    <div class="footer-credit">Site by <a href="https://geminihaus.ai" target="_blank" rel="noopener" style="color:var(--ink-muted);border-bottom:1px solid var(--rule);padding-bottom:1px;">Gemini Haus</a></div>
+  </div>
+</footer>
 
-  <!-- QUOTE -->
-  <section id="quote">
-    <div class="quote-bg" id="quoteBg" aria-hidden="true"></div>
-    <div class="quote-veil" aria-hidden="true"></div>
-    <div class="container">
-      <div class="quote-inner">
-        <span class="quote-mark" aria-hidden="true">"</span>
-        <blockquote class="quote-body">
-          You might forget what we said or what we did — but we hope you'll always remember how we made you feel.
-        </blockquote>
-        <p class="quote-attr">
-          <span class="quote-attr-line" aria-hidden="true"></span>
-          The Nüde Philosophy
-          <span class="quote-attr-line" aria-hidden="true"></span>
-        </p>
-      </div>
-    </div>
-  </section>
+<a href="https://wa.me/62000000000" target="_blank" rel="noopener" class="wa-float" aria-label="Contact us on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
 
-  <!-- LOCATIONS -->
-  <section id="locations">
-    <div class="container">
-      <div class="locations-head">
-        <div>
-          <p class="section-label">Find Us</p>
-          <h2 class="section-title">Four homes across Bali.</h2>
-        </div>
-        <p class="locations-note">Walk-ins are always welcome. Reserve via WhatsApp for groups of 6 or more.</p>
-      </div>
-      <div class="locations-grid">
-        <div class="loc-card">
-          <div class="loc-num">01</div>
-          <h3 class="loc-name">Berawa</h3>
-          <p class="loc-address">Jl. Pantai Berawa,<br>Tibubeneng, Kuta Utara,<br>Bali 80361</p>
-          <span class="loc-hours-label">Hours</span>
-          <p class="loc-hours">Daily &nbsp;7:00 AM – 10:00 PM</p>
-          <a href="https://wa.me/62000000001" target="_blank" rel="noopener noreferrer" class="btn-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve via WhatsApp</a>
-        </div>
-        <div class="loc-card">
-          <div class="loc-num">02</div>
-          <h3 class="loc-name">Umalas</h3>
-          <p class="loc-address">Jl. Umalas I,<br>Kerobokan Kelod, Kuta Utara,<br>Bali 80361</p>
-          <span class="loc-hours-label">Hours</span>
-          <p class="loc-hours">Daily &nbsp;7:00 AM – 10:00 PM</p>
-          <a href="https://wa.me/62000000002" target="_blank" rel="noopener noreferrer" class="btn-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve via WhatsApp</a>
-        </div>
-        <div class="loc-card">
-          <div class="loc-num">03</div>
-          <h3 class="loc-name">Babakan</h3>
-          <p class="loc-address">Jl. Babakan,<br>Seminyak, Kuta,<br>Bali 80361</p>
-          <span class="loc-hours-label">Hours</span>
-          <p class="loc-hours">Daily &nbsp;7:00 AM – 10:00 PM</p>
-          <a href="https://wa.me/62000000003" target="_blank" rel="noopener noreferrer" class="btn-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve via WhatsApp</a>
-        </div>
-        <div class="loc-card">
-          <div class="loc-num">04</div>
-          <h3 class="loc-name">Pererenan</h3>
-          <p class="loc-address">Jl. Pererenan,<br>Mengwi, Badung,<br>Bali 80351</p>
-          <span class="loc-hours-label">Hours</span>
-          <p class="loc-hours">Daily &nbsp;7:00 AM – 10:00 PM</p>
-          <a href="https://wa.me/62000000004" target="_blank" rel="noopener noreferrer" class="btn-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Reserve via WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+  (function() {
+    var t = setTimeout(function() {
+      var l = document.getElementById('loader');
+      if (l) { l.style.transition = 'opacity .5s'; l.style.opacity = '0'; setTimeout(function(){ l.style.display = 'none'; }, 500); }
+    }, 6000);
+    window.__loaderFallback = t;
+  }());
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+<script>
+  'use strict';
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-logo">Nüde.</div>
-          <p class="footer-tagline">Real People, Honest Food, All Nüde. Bali's original neighbourhood café, established 2016.</p>
-          <div class="footer-socials">
-            <a href="https://www.instagram.com/nudebali" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-          </div>
-        </div>
-        <div>
-          <p class="footer-col-title">Navigate</p>
-          <ul class="footer-links">
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#menu">The Menu</a></li>
-            <li><a href="#specials">Specials</a></li>
-            <li><a href="#locations">Locations</a></li>
-            <li><a href="https://nude-bali.com/gallery" target="_blank" rel="noopener noreferrer">Gallery ↗</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-col-title">Visit Us</p>
-          <ul class="footer-links">
-            <li><a href="#locations">Berawa</a></li>
-            <li><a href="#locations">Umalas</a></li>
-            <li><a href="#locations">Babakan</a></li>
-            <li><a href="#locations">Pererenan</a></li>
-          </ul>
-          <p style="margin-top:1.5rem; font-size:0.72rem; color:var(--text-muted); opacity:0.5; line-height:1.7;">Daily<br>7:00 AM – 10:00 PM</p>
-        </div>
-      </div>
-      <div class="footer-bar">
-        <p class="footer-copy">© 2024 Nüde™ · All rights reserved.</p>
-        <div class="footer-bar-right">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#" id="backToTop">Back to top ↑</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  if (typeof gsap === 'undefined') {
+    var _l = document.getElementById('loader');
+    if (_l) _l.style.display = 'none';
+    clearTimeout(window.__loaderFallback);
+    throw new Error('GSAP not loaded.');
+  }
 
-  <a href="https://wa.me/62000000000" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Contact Nüde on WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  gsap.registerPlugin(ScrollTrigger);
 
-  <script>
-    (function() {
-      var t = setTimeout(function() {
-        var l = document.getElementById('loader');
-        if (l) { l.style.transition = 'opacity 0.5s'; l.style.opacity = '0'; setTimeout(function(){ l.style.display='none'; }, 500); }
-      }, 6000);
-      window.__loaderFallback = t;
-    }());
-  </script>
+  let lenis;
+  if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
+    try {
+      lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(time => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    } catch(e) { lenis = null; }
+  }
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-
-  <script>
-    'use strict';
-
-    if (typeof gsap === 'undefined') {
-      var _l = document.getElementById('loader');
-      if (_l) _l.style.display = 'none';
-      clearTimeout(window.__loaderFallback);
-      throw new Error('GSAP not loaded — animations disabled.');
-    }
-
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    let lenis;
-    if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
-      try {
-        lenis = new Lenis({
-          duration: 1.25,
-          easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          smoothWheel: true
-        });
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add(time => lenis.raf(time * 1000));
-        gsap.ticker.lagSmoothing(0);
-      } catch(e) { lenis = null; }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const id = a.getAttribute('href');
-        if (id === '#') {
-          e.preventDefault();
-          if (lenis) lenis.scrollTo(0); else window.scrollTo({ top: 0, behavior: 'smooth' });
-          return;
-        }
-        const target = document.querySelector(id);
-        if (target) {
-          e.preventDefault();
-          if (lenis) lenis.scrollTo(target, { offset: -80 });
-          else target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    /* Loader */
-    const loader     = document.getElementById('loader');
-    const loaderFill = document.getElementById('loaderFill');
-    const loaderSub  = document.getElementById('loaderSub');
-
-    if (!prefersReducedMotion) {
-      const loaderTl = gsap.timeline({ onComplete() { clearTimeout(window.__loaderFallback); loader.style.display = 'none'; } });
-      loaderTl
-        .from('.loader-letter', { opacity: 0, y: 28, rotateX: -50, stagger: 0.08, duration: 0.6, ease: 'power3.out' })
-        .to(loaderFill, { scaleX: 1, duration: 0.7, ease: 'power2.inOut' }, '-=0.15')
-        .to(loaderSub, { opacity: 1, duration: 0.4, ease: 'power2.out' }, '-=0.3')
-        .to(loader, { yPercent: -100, duration: 0.88, ease: 'power3.inOut', delay: 0.42 })
-        .add(heroEntrance, '-=0.52');
-    } else {
+  const loader = document.getElementById('loader');
+  const loaderTl = gsap.timeline({
+    onComplete() {
       clearTimeout(window.__loaderFallback);
       loader.style.display = 'none';
+      initAnimations();
     }
+  });
 
-    function heroEntrance() {
-      const tl = gsap.timeline();
-      tl
-        .from('.hero-eyebrow', { opacity: 0, y: 14, duration: 0.5, ease: 'power2.out' })
-        .from('.hero-title', { clipPath: 'inset(0 100% 0 0)', duration: 1.0, ease: 'power3.inOut' }, '-=0.25')
-        .from('.hero-sub', { opacity: 0, y: 18, duration: 0.55, ease: 'power2.out' }, '-=0.55')
-        .from('.hero-ctas .btn', { opacity: 0, y: 14, stagger: 0.13, duration: 0.45, ease: 'power2.out' }, '-=0.35')
-        .from('.hero-scroll', { opacity: 0, duration: 0.5 }, '-=0.2')
-        .from('.hero-ring', { scale: 0.85, opacity: 0, duration: 1.4, ease: 'power2.out' }, 0);
-      return tl;
-    }
+  if (prefersReducedMotion) {
+    clearTimeout(window.__loaderFallback);
+    loader.style.display = 'none';
+    initAnimations();
+  } else {
+    loaderTl
+      .from('.loader-letter', { opacity: 0, y: 24, stagger: 0.09, duration: 0.55, ease: 'power3.out' })
+      .to('.loader-bar-fill', { scaleX: 1, duration: 0.7, ease: 'power2.inOut' }, '-=0.1')
+      .to('.loader-tag', { opacity: 1, duration: 0.4 }, '-=0.2')
+      .to('#loader', { yPercent: -100, duration: 0.85, ease: 'power3.inOut', delay: 0.5 });
+  }
+
+  function initAnimations() {
+    if (prefersReducedMotion) return;
+
+    const heroTl = gsap.timeline({ delay: 0.1 });
+    heroTl
+      .to('.hero-tag',    { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 0)
+      .to('.hero-title',  { clipPath: 'inset(0 0% 0 0)', duration: 1, ease: 'power3.inOut' }, 0.2)
+      .to('.hero-body',   { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' }, 0.65)
+      .to('.hero-ctas',   { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 0.85)
+      .to('.hero-scroll-hint', { opacity: 1, duration: 0.4 }, 1.1);
 
     ScrollTrigger.create({
-      start: 'top -70',
+      start: 'top -60',
       onUpdate: self => document.getElementById('nav').classList.toggle('scrolled', self.progress > 0)
     });
 
-    const hamburger  = document.getElementById('hamburger');
-    const navOverlay = document.getElementById('navOverlay');
+    gsap.from('#story-visual', { x: -60, opacity: 0, duration: 0.95, ease: 'power3.out', scrollTrigger: { trigger: '#story', start: 'top 72%' } });
+    gsap.from('#story-text > *', { opacity: 0, y: 32, stagger: 0.12, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: '#story', start: 'top 62%' } });
 
-    hamburger.addEventListener('click', () => {
-      const open = hamburger.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', String(open));
-      navOverlay.setAttribute('aria-hidden', String(!open));
-      navOverlay.classList.toggle('open', open);
-      document.body.style.overflow = open ? 'hidden' : '';
+    ScrollTrigger.batch('.value-card, .g-item, .special-card', {
+      onEnter: els => gsap.from(els, { opacity: 0, y: 44, scale: 0.97, stagger: 0.1, duration: 0.75, ease: 'power2.out' }),
+      once: true
     });
 
-    navOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      navOverlay.setAttribute('aria-hidden', 'true');
-      navOverlay.classList.remove('open');
-      document.body.style.overflow = '';
-    }));
+    ScrollTrigger.batch('.location-card', {
+      onEnter: els => gsap.from(els, { opacity: 0, y: 40, stagger: 0.12, duration: 0.7, ease: 'power2.out' }),
+      once: true
+    });
 
-    if (!prefersReducedMotion) {
-      gsap.from('.story-image-wrap', { x: -72, opacity: 0, duration: 0.95, ease: 'power3.out', scrollTrigger: { trigger: '#story', start: 'top 72%' } });
-      gsap.from('.story-text > *', { opacity: 0, y: 32, stagger: 0.11, duration: 0.72, ease: 'power2.out', scrollTrigger: { trigger: '.story-grid', start: 'top 66%' } });
+    gsap.to('#quoteBg', { yPercent: -18, scrollTrigger: { trigger: '#quote-section', start: 'top bottom', end: 'bottom top', scrub: 1.5 } });
+    gsap.fromTo('#quoteInner', { scale: 0.93, opacity: 0 }, { scale: 1, opacity: 1, scrollTrigger: { trigger: '#quote-section', start: 'top 65%', end: 'center 40%', scrub: 1 } });
 
-      ScrollTrigger.batch('.values-card', { onEnter: els => gsap.from(els, { opacity: 0, y: 44, scale: 0.96, stagger: 0.12, duration: 0.78, ease: 'power2.out' }), once: true, start: 'top 82%' });
-      ScrollTrigger.batch('.photo-cell', { onEnter: els => gsap.from(els, { opacity: 0, scale: 0.93, stagger: 0.09, duration: 0.82, ease: 'power2.out' }), once: true, start: 'top 86%' });
-      ScrollTrigger.batch('.special-card', { onEnter: els => gsap.from(els, { opacity: 0, y: 42, stagger: 0.14, duration: 0.82, ease: 'power2.out' }), once: true, start: 'top 78%' });
-
-      gsap.to('#quoteBg', { yPercent: -22, ease: 'none', scrollTrigger: { trigger: '#quote', start: 'top bottom', end: 'bottom top', scrub: 1.6 } });
-      gsap.fromTo('.quote-body', { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, scrollTrigger: { trigger: '#quote', start: 'top 62%', end: 'center 38%', scrub: 1 } });
-
-      ScrollTrigger.batch('.loc-card', { onEnter: els => gsap.from(els, { opacity: 0, y: 38, stagger: 0.1, duration: 0.72, ease: 'power2.out' }), once: true, start: 'top 82%' });
-      gsap.utils.toArray('.section-label, .section-title').forEach(el => { gsap.from(el, { opacity: 0, y: 20, duration: 0.65, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%' } }); });
+    const track = document.getElementById('marqueeTrack');
+    if (track) {
+      track.addEventListener('mouseenter', () => gsap.to(track, { animationPlayState: 'paused', duration: 0 }));
+      track.addEventListener('mouseleave', () => gsap.to(track, { animationPlayState: 'running', duration: 0 }));
     }
+  }
 
-    function switchTab(id, btn) {
-      const current = document.querySelector('.tab-panel.active');
-      if (!current || current.id === id) return;
-      document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-      const next = document.getElementById(id);
-      if (prefersReducedMotion) { current.classList.remove('active'); next.classList.add('active'); return; }
-      gsap.to(current, { opacity: 0, y: 8, duration: 0.22, ease: 'power2.in', onComplete() {
-        current.classList.remove('active'); current.style.cssText = '';
-        next.classList.add('active');
-        gsap.fromTo(next, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.36, ease: 'power2.out', onComplete: animateMenuItems });
+  if (window.matchMedia('(pointer: fine)').matches) {
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => { gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.3, ease: 'power2.out' }); });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 2.2, duration: 0.25 }));
+      el.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, duration: 0.25 }));
+    });
+  }
+
+  const hamburger = document.getElementById('hamburger');
+  const navOverlay = document.getElementById('nav-overlay');
+  const overlayClose = document.getElementById('overlay-close');
+
+  function openMenu() { hamburger.classList.add('open'); navOverlay.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); if (lenis) lenis.stop(); }
+  function closeMenu() { hamburger.classList.remove('open'); navOverlay.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); if (lenis) lenis.start(); }
+
+  hamburger.addEventListener('click', () => navOverlay.classList.contains('open') ? closeMenu() : openMenu());
+  overlayClose.addEventListener('click', closeMenu);
+  navOverlay.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+  function switchTab(id, btn) {
+    const allBtns = document.querySelectorAll('.menu-tab-btn');
+    allBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+    btn.classList.add('active'); btn.setAttribute('aria-selected', 'true');
+
+    const panels = document.querySelectorAll('.menu-panel');
+    const activePanel = document.querySelector('.menu-panel.active');
+
+    if (activePanel) {
+      gsap.to(activePanel, { opacity: 0, y: 10, duration: 0.2, onComplete() {
+        panels.forEach(p => { p.classList.remove('active'); p.style.display = 'none'; });
+        const next = document.getElementById(id);
+        if (next) { next.classList.add('active'); next.style.display = 'grid'; gsap.fromTo(next, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }); }
       }});
+    } else {
+      panels.forEach(p => { p.classList.remove('active'); p.style.display = 'none'; });
+      const next = document.getElementById(id);
+      if (next) { next.classList.add('active'); next.style.display = 'grid'; gsap.fromTo(next, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35 }); }
     }
+    ScrollTrigger.refresh();
+  }
 
-    function animateMenuItems() {
-      if (prefersReducedMotion) return;
-      gsap.from(document.querySelectorAll('.tab-panel.active .menu-card'), { opacity: 0, y: 22, stagger: 0.055, duration: 0.48, ease: 'power2.out' });
-    }
-    animateMenuItems();
-
-    if (window.matchMedia('(pointer: fine)').matches && !prefersReducedMotion) {
-      const cursor = document.getElementById('cursor');
-      document.addEventListener('mousemove', e => gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.32, ease: 'power2.out' }));
-      document.addEventListener('mouseleave', () => gsap.to(cursor, { opacity: 0, duration: 0.2 }));
-      document.addEventListener('mouseenter', () => gsap.to(cursor, { opacity: 1, duration: 0.2 }));
-      document.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 2.8, opacity: 0.55, duration: 0.25 }));
-        el.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.25 }));
-      });
-    }
-
-    document.getElementById('backToTop')?.addEventListener('click', e => {
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
       e.preventDefault();
-      if (lenis) lenis.scrollTo(0); else window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (lenis) { lenis.scrollTo(target, { offset: -80, duration: 1.4 }); }
+      else { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
