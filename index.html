@@ -2016,12 +2016,32 @@
   </a>
 
   <!-- ========== SCRIPTS ========== -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+  <!-- Safety net: always hide loader within 6s even if JS/CDN fails entirely -->
+  <script>
+    (function() {
+      var t = setTimeout(function() {
+        var l = document.getElementById('loader');
+        if (l) { l.style.transition = 'opacity 0.5s'; l.style.opacity = '0'; setTimeout(function(){ l.style.display='none'; }, 500); }
+      }, 6000);
+      window.__loaderFallback = t;
+    }());
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 
   <script>
     'use strict';
+
+    /* ── Abort gracefully if GSAP failed to load ── */
+    if (typeof gsap === 'undefined') {
+      var _l = document.getElementById('loader');
+      if (_l) _l.style.display = 'none';
+      clearTimeout(window.__loaderFallback);
+      throw new Error('GSAP not loaded — animations disabled, site remains functional.');
+    }
 
     /* ── Reduced motion guard ── */
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -2029,17 +2049,19 @@
     /* ── GSAP + ScrollTrigger ── */
     gsap.registerPlugin(ScrollTrigger);
 
-    /* ── Lenis smooth scroll ── */
+    /* ── Lenis smooth scroll (graceful degradation if CDN failed) ── */
     let lenis;
-    if (!prefersReducedMotion) {
-      lenis = new Lenis({
-        duration: 1.25,
-        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true
-      });
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add(time => lenis.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
+    if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
+      try {
+        lenis = new Lenis({
+          duration: 1.25,
+          easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true
+        });
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add(time => lenis.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
+      } catch(e) { lenis = null; }
     }
 
     /* ── Smooth anchor scrolling ── */
@@ -2070,7 +2092,10 @@
 
     if (!prefersReducedMotion) {
       const loaderTl = gsap.timeline({
-        onComplete() { loader.style.display = 'none'; }
+        onComplete() {
+          clearTimeout(window.__loaderFallback);
+          loader.style.display = 'none';
+        }
       });
 
       loaderTl
@@ -2094,7 +2119,8 @@
         /* Hero entrance starts just before loader finishes */
         .add(heroEntrance, '-=0.52');
     } else {
-      /* Skip loader immediately */
+      /* Skip loader immediately (reduced motion or no animation) */
+      clearTimeout(window.__loaderFallback);
       loader.style.display = 'none';
     }
 
